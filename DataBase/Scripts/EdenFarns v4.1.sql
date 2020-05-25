@@ -18,7 +18,7 @@ MAXSIZE= 10GB
 GO
 USE EdenFarmsDB
 GO
-CREATE Table User_TBL
+CREATE Table tblUser
 (
 UserID INT IDENTITY PRIMARY KEY,
 UserName VARCHAR(40) NOT NULL,
@@ -28,7 +28,7 @@ Email VARCHAR(40) NOT NULL,
 UserAddress VARCHAR(100) NOT NULL
 );
 GO 
-CREATE Table Farm_TBL
+CREATE Table tblFarm
 (
 FarmID INT IDENTITY PRIMARY KEY,
 UserID INT FOREIGN KEY REFERENCES User_TBL(UserID),
@@ -37,14 +37,14 @@ FarmLocation VARCHAR(100) NOT NULL,
 LocationAlias VARCHAR(40)
 )
 GO
-CREATE Table PlantCategory_TBL
+CREATE Table tblPlantCategory
 (
 PlantCategoryID INT IDENTITY PRIMARY KEY,
 CategoryName VARCHAR(40) NOT NULL,
 CategoryDescription VARCHAR(100) NOT NULL
 )
 GO
-CREATE Table Plant_TBL
+CREATE Table tblPlant
 (
 PlantID INT IDENTITY PRIMARY KEY,
 PlantCategoryID INT FOREIGN KEY REFERENCES PlantCategory_TBL(PlantCategoryID),
@@ -61,7 +61,7 @@ OptimalPhosphorus DECIMAL DEFAULT 0,
 OptimalPotassium DECIMAL DEFAULT 0
 )
 GO
-CREATE Table Plots_TBL
+CREATE Table tblPlots
 (
 PlotID INT IDENTITY PRIMARY KEY,
 FarmID INT FOREIGN KEY REFERENCES Farm_TBL(FarmID),
