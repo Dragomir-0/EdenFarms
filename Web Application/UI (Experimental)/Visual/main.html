@@ -1,66 +1,38 @@
 <html>
   <head>
+    <link rel="stylesheet" href="maindesign.css">
     <title>EDEN FARMS</title>
-    <h>Main</h>
-    <style>
-      .background
-      {
-        color:forestgreen;
-        font-family: fantasy;
-      }
-    </style>
   </head>
 
   <body>
-    <form action="/main_page.php">
+    <form action="/main_page.php" class="background">
 <br/>
+<header>
+  <a href="about.html" class="aboutus">About Us</a>
+  <a href="contact.html" class="contactus">Contact Us</a>
+</header>
 <div>
-  <a href="UI\Visual\about.html">About Us</a>
-  <style>
-    .aboutus
-    {
-      text-indent: 60%;
-      font-family: fantasy;
-    }
-  </style>
-
-  <a href="UI\Visual\contact.html">Contact Us</a>
-  <style>
-    .contactus
-    {
-      text-indent: 80%;
-      font-family: fantasy;
-    }
-  </style>
+<label for="User" class="text">Username:</label>
+<input type="text" id="Username" name="Username" class="text">
+<button type="button" class="buttonmain">Search</button>
 </div>
-<label for="User">Username:
-  <style>
-    .name
-    {
-      font-family: fantasy;
-    }
-  </style>
-</label>
-<input type="text" id="Username" name="Username">
-<button type="button">Search</button>
-
+<article class="article">
+<label for="Farms" class="text">Farms:</label>
+<textarea id="Farms" rows="4" cols="50" class="text">
+  Farm: Alpha       Status: Active
+  Farm: Beta        Status: N/A
+  Farm: Gamma       Status: Active
+  </textarea>
+</article>
 <br/>
-<button type="button">Go to Account</button>
-<button type="button" onclick="BacktoLogin()">Logout</button><br/><br/>
-        <label for="Farms">Farms:</label>
+<button type="button" class="buttonmain">Go to Account</button>
+<button type="button" onclick="BacktoLogin()" class="buttonmain">Logout</button><br/><br/>
+        
 <br/>
 <script>
   function BacktoLogin()
   {
-  window.location.href = "UI\Visual\login.html";
+  window.location.href = "login.html";
   }
-
 </script>
-<textarea id="Farms" rows="4" cols="50">
-Farm: Alpha       Status: Active
-Farm: Beta        Status: N/A
-Darm: Gamma       Status: Active
-</textarea>
-
-<!--Same here. Wanted to add animations and more variation to text-->
   </body>

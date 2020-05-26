@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+.contactheading
+{
+background-position: center;
+background-image: linear-gradient(to right, darkolivegreen, lightsalmon);
+color: lightgreen;
+font-family: 'Righteous', serif;
+font-size: 40px;
+text-align: center;
+text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+}
+
+.backanimatec
+{
+    transition: left .6s cubic-bezier(0,.5,0,1);
+    font-family: 'Righteous', serif;
+}
+
+.textc
+{
+    font-family: 'Righteous', serif;
+    background-color: peachpuff;
+}
