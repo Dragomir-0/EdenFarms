@@ -15,7 +15,7 @@
     <form action="/main_page.php">
 <br/>
 <div>
-  About Us
+  <a href="UI\Visual\about.html">About Us</a>
   <style>
     .aboutus
     {
@@ -24,7 +24,7 @@
     }
   </style>
 
-  Contact us
+  <a href="UI\Visual\contact.html">Contact Us</a>
   <style>
     .contactus
     {
@@ -45,10 +45,17 @@
 <button type="button">Search</button>
 
 <br/>
-<button type="button">Go to Account</button><br/><br/>
+<button type="button">Go to Account</button>
+<button type="button" onclick="BacktoLogin()">Logout</button><br/><br/>
         <label for="Farms">Farms:</label>
 <br/>
+<script>
+  function BacktoLogin()
+  {
+  window.location.href = "UI\Visual\login.html";
+  }
 
+</script>
 <textarea id="Farms" rows="4" cols="50">
 Farm: Alpha       Status: Active
 Farm: Beta        Status: N/A

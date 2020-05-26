@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="logindesign.css">
+    <title >EDEN FARMS</title>
+  </head>
+
+
+<body>
+  <header class="title">
+    <h>EDEN FARMS</h>
+  </header>
+    <form action="login_page.php" id="login" name = "login_page" method="POST">
+        <div  class="loginbg">
+        <label for="Username" class="lbls">Username:</label>
+        <input type="text" id="uname" name="Username" required class="inputs"><br><br>
+        <label for="pw" class="lbls">Password:</label>
+        <input type="text" id="pw" name="Password" required class="inputs"><br><br>
+          <button onclick="ProceedMain()" class="button">Login</button>
+        </a>
+        <button type="button" onclick="Clear()" class="button">Clear</button>
+      </div>
+      <footer class="footer">
+      
+      </footer>
+      </form>
+
+</body>
+
+<script>
+function ProceedMain(){ 
+  var username = document.getElementById("uname").value;
+  var password = document.getElementById("pw").value;
+  if ( username == "Formget" && password == "formget#123"){
+window.location.href = "UI\Visual\main.html";
+return false;
+  }
+  else alert ("Login failed. Please check your info");
+  window.location.href = "UI\Visual\login.html";
+
+  function Clear()
+  {
+    var username = document.getElementById("uname").clear;
+  var password = document.getElementById("pw").clear;
+  }
+}
+</script>
+</html>
