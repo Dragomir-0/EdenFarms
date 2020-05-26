@@ -9,7 +9,7 @@ CREATE PROCEDURE spListPlantsByCategory
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE PlantCategoryID = @category
 END
 
@@ -20,7 +20,7 @@ CREATE PROCEDURE spListPlantsByName
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE PlantName = @name
 END
 
@@ -31,7 +31,7 @@ CREATE PROCEDURE spListPlantByAmbientTemps
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalAmbientTemp = @temp
 END
 
@@ -42,7 +42,7 @@ CREATE PROCEDURE spListPlantByAmbientHumidity
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalAmbientHumidity = @humid
 END
 
@@ -53,7 +53,7 @@ CREATE PROCEDURE spListPlantByAmbientLight
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalAmbientLight = @light
 END
 
@@ -64,7 +64,7 @@ CREATE PROCEDURE spListPlantByAmbientVariables
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalAmbientTemp = @temp AND OptimalAmbientHumidity = @humid AND OptimalAmbientLight = @light
 END
 
@@ -75,7 +75,7 @@ CREATE PROCEDURE spListPlantByInternalTemp
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalInternalTemp = @temp
 END
 
@@ -86,7 +86,7 @@ CREATE PROCEDURE spListPlantByInternalHumidity
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalInternalHumidity = @humid
 END
 
@@ -97,7 +97,7 @@ CREATE PROCEDURE spListPlantByInternalLight
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalInternalLight = @light
 END
 
@@ -108,7 +108,7 @@ CREATE PROCEDURE spListPlantByInternalOxygen
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalInternalOxygen = @oxy
 END
 
@@ -119,7 +119,7 @@ CREATE PROCEDURE spListPlantByInternalVariables
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalInternalTemp = @temp AND OptimalInternalHumidity = @humid AND OptimalInternalLight = @light AND OptimalInternalOxygen = @oxy
 END
 
@@ -130,7 +130,7 @@ CREATE PROCEDURE spListPlantByNitrogen
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalNitrogen = @nitro
 END
 
@@ -141,7 +141,7 @@ CREATE PROCEDURE spListPlantByPhosphorus
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalPhosphorus = @phos
 END
 
@@ -152,7 +152,7 @@ CREATE PROCEDURE spListPlantByPotassium
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalPotassium = @pot
 END
 
@@ -163,7 +163,7 @@ CREATE PROCEDURE spListPlantByVariables
 AS
 BEGIN
 SELECT PlantID
-FROM tblPlant
+FROM Plant_TBL
 WHERE OptimalNitrogen = @nitro AND OptimalPhosphorus = @phos AND OptimalPotassium = @pot
 END
 
@@ -176,7 +176,7 @@ CREATE PROCEDURE spListAllPlantDetails
 AS
 BEGIN
 SELECT *
-FROM tblPlant
+FROM Plant_TBL
 WHERE PlantID = @id
 END
 
@@ -187,7 +187,7 @@ CREATE PROCEDURE spListPlantDetails
 AS
 BEGIN
 SELECT PlantID, PlantCategoryID, PlantName
-FROM tblPlant
+FROM Plant_TBL
 WHERE PlantID = @id
 END
 
@@ -198,7 +198,7 @@ CREATE PROCEDURE spListPlantAmbientVariables
 AS
 BEGIN
 SELECT OptimalAmbientHumidity, OptimalAmbientLight, OptimalAmbientTemp
-FROM tblPlant
+FROM Plant_TBL
 WHERE PlantID = @id
 END
 
@@ -209,7 +209,7 @@ CREATE PROCEDURE spListPlantInternalVariables
 AS
 BEGIN
 SELECT OptimalInternalHumidity, OptimalInternalLight, OptimalInternalOxygen, OptimalInternalTemp
-FROM tblPlant
+FROM Plant_TBL
 WHERE PlantID = @id
 END
 
@@ -220,7 +220,7 @@ CREATE PROCEDURE spListPlantVariables
 AS
 BEGIN
 SELECT OptimalNitrogen, OptimalPhosphorus, OptimalPotassium
-FROM tblPlant
+FROM Plant_TBL
 WHERE PlantID = @id
 END
 
@@ -233,7 +233,7 @@ CREATE PROCEDURE spListPlotByPlantID
 AS
 BEGIN
 SELECT PlotID
-FROM tblPlots
+FROM Plots_TBL
 WHERE PlantID = @id
 END
 
@@ -244,7 +244,7 @@ CREATE PROCEDURE spListPlotByFarmID
 AS
 BEGIN
 SELECT PlotID
-FROM tblPlots
+FROM Plots_TBL
 WHERE FarmID = @id
 END
 
@@ -257,7 +257,7 @@ CREATE PROCEDURE spListPlotDetails
 AS
 BEGIN
 SELECT *
-FROM tblPlots
+FROM Plots_TBL
 WHERE PlotID = @id
 END
 
@@ -268,7 +268,7 @@ CREATE PROCEDURE spListPlotOverrides
 AS
 BEGIN
 SELECT UserOverride
-FROM tblPlots
+FROM Plots_TBL
 WHERE PlotID = @id
 END
 
@@ -279,7 +279,7 @@ CREATE PROCEDURE spListPlotPerformance
 AS
 BEGIN
 SELECT PerformanceReview
-FROM tblPlots
+FROM Plots_TBL
 WHERE PlotID = @id
 END
 
@@ -292,7 +292,7 @@ CREATE PROCEDURE spListFarmByUserID
 AS
 BEGIN
 SELECT FarmID
-FROM tblFarm
+FROM Farm_TBL
 WHERE UserID = @id
 END
 
@@ -303,7 +303,7 @@ CREATE PROCEDURE spListFarmByName
 AS
 BEGIN
 SELECT FarmID
-FROM tblFarm
+FROM Farm_TBL
 WHERE FarmName = @name
 END
 
@@ -314,7 +314,7 @@ CREATE PROCEDURE spListFarmByLocation
 AS
 BEGIN
 SELECT FarmID
-FROM tblFarm
+FROM Farm_TBL
 WHERE FarmLocation = @location
 END
 
@@ -325,7 +325,7 @@ CREATE PROCEDURE spListFarmByLocationAlias
 AS
 BEGIN
 SELECT FarmID
-FROM tblFarm
+FROM Farm_TBL
 WHERE LocationAlias = @alias
 END
 
@@ -338,7 +338,7 @@ CREATE PROCEDURE spListFarmDetails
 AS
 BEGIN
 SELECT *
-FROM tblFarm
+FROM Farm_TBL
 WHERE FarmID = @id
 END
 
@@ -349,7 +349,7 @@ CREATE PROCEDURE spListFarmUser
 AS
 BEGIN
 SELECT UserID
-FROM tblFarm
+FROM Farm_TBL
 WHERE FarmID = @id
 END
 
@@ -360,7 +360,7 @@ CREATE PROCEDURE spListFarmName
 AS
 BEGIN
 SELECT FarmName
-FROM tblFarm
+FROM Farm_TBL
 WHERE FarmID = @id
 END
 
@@ -371,7 +371,7 @@ CREATE PROCEDURE spListFarmLocation
 AS
 BEGIN
 SELECT FarmLocation
-FROM tblFarm
+FROM Farm_TBL
 WHERE FarmID = @id
 END
 
@@ -382,7 +382,7 @@ CREATE PROCEDURE spListFarmAlias
 AS
 BEGIN
 SELECT LocationAlias
-FROM tblFarm
+FROM Farm_TBL
 WHERE FarmID = @id
 END
 
@@ -395,7 +395,7 @@ CREATE PROCEDURE spListUserIDDetails
 AS
 BEGIN
 SELECT *
-FROM tblUser
+FROM User_TBL
 WHERE UserID = @id
 END
 
@@ -406,7 +406,7 @@ CREATE PROCEDURE spListUserNameDetails
 AS
 BEGIN
 SELECT *
-FROM tblUser
+FROM User_TBL
 WHERE UserName = @name
 END
 
@@ -417,7 +417,7 @@ CREATE PROCEDURE spListUserVatDetails
 AS
 BEGIN
 SELECT *
-FROM tblUser
+FROM User_TBL
 WHERE VatIDNumber = @vat
 END
 
@@ -428,7 +428,7 @@ CREATE PROCEDURE spListUserContactDetails
 AS
 BEGIN
 SELECT *
-FROM tblUser
+FROM User_TBL
 WHERE ContactNumber = @num
 END
 
@@ -439,7 +439,7 @@ CREATE PROCEDURE spListUserEmailDetails
 AS
 BEGIN
 SELECT *
-FROM tblUser
+FROM User_TBL
 WHERE Email = @email
 END
 
@@ -450,7 +450,7 @@ CREATE PROCEDURE spListUserAddressDetails
 AS
 BEGIN
 SELECT *
-FROM tblUser
+FROM User_TBL
 WHERE UserAddress = @address
 END
 
@@ -463,7 +463,7 @@ CREATE PROCEDURE spListPlantCategoryIDDetails
 AS
 BEGIN
 SELECT *
-FROM tblPlantCategory
+FROM PlantCategory_TBL
 WHERE PlantCategoryID = @id
 END
 
@@ -474,7 +474,7 @@ CREATE PROCEDURE spListPlantCategoryNameDetails
 AS
 BEGIN
 SELECT *
-FROM tblPlantCategory
+FROM PlantCategory_TBL
 WHERE CategoryName = @name
 END
 
@@ -485,7 +485,7 @@ CREATE PROCEDURE spListPlantDescriptionDetails
 AS
 BEGIN
 SELECT *
-FROM tblPlantCategory
+FROM PlantCategory_TBL
 WHERE CategoryDescription = @desc
 END
 
