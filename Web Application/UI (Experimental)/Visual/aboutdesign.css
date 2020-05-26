@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+.backanimate
+{
+    transition: left .6s cubic-bezier(0,.5,0,1);
+    font-family: 'Righteous', serif;
+}
+
+.title
+{
+
+background-image: linear-gradient(to right, forestgreen, sienna);
+color: greenyellow;
+font-family: 'Righteous', serif;
+font-size: 40px;
+text-align: center;
+text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+}
+
+.aboutbg
+{
+    background-color: peachpuff;
+    padding-bottom: 1%;
+    font-family: 'Righteous', serif;
+}
+
+.contactlink
+{
+    font-family: 'Righteous', serif;
+    color:green;
+}
+
+.contactlink:visited
+{
+    color: gold;
+}

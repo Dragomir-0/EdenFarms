@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+.background
+{
+  background-color:peachpuff;
+}
+
+.contactus
+{
+    font-family: 'Righteous', serif;
+    color:green;
+}
+
+.contactus:visited
+{
+    color: gold;
+}
+
+.aboutus
+{
+  font-family: 'Righteous', serif;
+  margin-left: 80%;
+  color:green;
+}
+
+.aboutus:visited
+{
+    color: gold;
+}
+
+.buttonmain
+{
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: chartreuse;
+    border: peru;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
+}
+
+.article
+{
+    margin-top: 1%;
+    margin-left: 40%;
+}
+
+.text
+{
+    font-family: 'Righteous', serif;
+}
