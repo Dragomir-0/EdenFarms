@@ -2,7 +2,7 @@ CREATE DATABASE EdenFarmsDB
 ON PRIMARY
 (
 NAME= BCLibraryDBData,
-FILENAME= 'D:\Documents\University Tian Hanekom\Project 381\Tian Hanekom\Milestone 3\Eden Farms Database\EdenFarmsDBData.mdf',
+FILENAME= 'C:\Users\Riaan\Documents\GitHub\Eden farm\DataBase\Scripts\EdenFarmsDBData.mdf',
 SIZE= 20MB,
 FILEGROWTH= 10%,
 MAXSIZE= 10GB
@@ -10,7 +10,7 @@ MAXSIZE= 10GB
 LOG ON
 (
 NAME= BCLibraryDBLogs,
-FILENAME= 'D:\Documents\University Tian Hanekom\Project 381\Tian Hanekom\Milestone 3\Eden Farms Database\EdenFarmsDBLogs.ldf',
+FILENAME= 'C:\Users\Riaan\Documents\GitHub\Eden farm\DataBase\Scripts\EdenFarmsDBLogs.ldf',
 SIZE= 20MB,
 FILEGROWTH= 10%,
 MAXSIZE= 10GB
