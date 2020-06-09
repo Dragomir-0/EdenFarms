@@ -2,11 +2,11 @@
 Create PROCEDURE spInserThetUsers
 (
 @UserName VARCHAR(40),
-@UserPassword VARCHAR(40),
+@UserPassword VARCHAR(50),
 @VatIDNumber VARCHAR(10),
 @ContactNumber VARCHAR(10),
 @Email VARCHAR(40),
-@Address VARCHAR
+@Address VARCHAR(100)
 )
 AS 
 BEGIN
