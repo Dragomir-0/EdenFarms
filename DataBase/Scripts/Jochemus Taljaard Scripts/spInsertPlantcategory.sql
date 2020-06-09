@@ -2,7 +2,7 @@
 CREATE PROCEDURE spInserPlantcategory
 (
 @CategoryName VARCHAR(40) ,
-@CategoryDescription VARCHAR(100) 
+@CategoryDescription VARCHAR(80) 
 )
 AS
 BEGIN

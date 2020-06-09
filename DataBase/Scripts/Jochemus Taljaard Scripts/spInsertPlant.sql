@@ -1,12 +1,14 @@
 /*Insert plant*/
 CREATE PROCEDURE spInserPlant
 (
-@PlantID INT,
 @PlantCategoryID INT,
 @PlantName VARCHAR(40),
 @OptimalAmbientTemp DECIMAL,
 @OptimalAmbientHumidity DECIMAL,
 @OptimalAmbientLight VARCHAR(7),
+@OptimalInternalTemp DECIMAL,
+@OptimalInternalHumidity DECIMAL,
+@OptimalInternalLight VARCHAR(7),
 @OptimalInternalOxygen DECIMAL,
 @OptimalNitrogen DECIMAL,
 @OptimalPhosphorus DECIMAL,
@@ -14,7 +16,6 @@ CREATE PROCEDURE spInserPlant
 )
 AS 
 BEGIN
-INSERT INTO tblPlant(PlantName,OptimalInternalTemp,OptimalInternalHumidity,OptimalAmbientLight,OptimalInternalOxygen,OptimalNitrogen,OptimalPhosphorus,OptimalPotassium) 
-values(@PlantName,@OptimalAmbientLight,@OptimalAmbientTemp,
-@OptimalAmbientLight,@OptimalInternalOxygen,@OptimalNitrogen,@OptimalPhosphorus,@OptimalPotassium)
+INSERT INTO tblPlant(PlantCategoryID,PlantName,OptimalAmbientTemp,OptimalAmbientHumidity,OptimalAmbientLight,OptimalInternalTemp,OptimalInternalHumidity,OptimalInternalLight,OptimalInternalOxygen,OptimalNitrogen,OptimalPhosphorus,OptimalPotassium) 
+values(@PlantCategoryID,@PlantName,@OptimalAmbientTemp,@OptimalAmbientHumidity,@OptimalAmbientLight,@OptimalInternalTemp,@OptimalInternalHumidity,@OptimalInternalLight,@OptimalInternalOxygen,@OptimalNitrogen,@OptimalPhosphorus,@OptimalPotassium)
 END

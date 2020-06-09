@@ -1,7 +1,6 @@
 /*Insert a new farm*/
 CREATE PROCEDURE spInsertFarm
 (
-@FarmID INT,
 @UserID INT,
 @FarmName VARCHAR(40),
 @FarmLocation VARCHAR,
@@ -10,6 +9,6 @@ CREATE PROCEDURE spInsertFarm
 AS 
 BEGIN
 
-INSERT INTO tblFarm(FarmName,FarmLocation,LocationAlias) values(@FarmName,@FarmLocation,@LocationAlias)
+INSERT INTO tblFarm(UserID,FarmName,FarmLocation,LocationAlias) values(@UserID,@FarmName,@FarmLocation,@LocationAlias)
 
 END
