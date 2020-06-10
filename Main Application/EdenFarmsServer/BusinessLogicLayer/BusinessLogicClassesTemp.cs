@@ -10,11 +10,11 @@ namespace BusinessLogicLayer
     {
         #region Fields
         private int userID;
-        private string Username;
+        private string username;
         private string vatIDNumber;
         private string contactNumber;
-        private string email;
-        private string address;
+        private string emailaddress;
+        private string userAddress;
         #endregion
 
         public User()
@@ -23,12 +23,12 @@ namespace BusinessLogicLayer
         }
 
         #region Properties
-        public int UserID { get => userID; set => userID = value; }
-        public string Username1 { get => Username; set => Username = value; }
+        private int UserID { get => userID; set => userID = value; }
+        public string Username { get => username; set => username = value; }
         public string VatIDNumber { get => vatIDNumber; set => vatIDNumber = value; }
         public string ContactNumber { get => contactNumber; set => contactNumber = value; }
-        public string Email { get => email; set => email = value; }
-        public string Address { get => address; set => address = value; }
+        public string Emailaddress { get => emailaddress; set => emailaddress = value; }
+        public string UserAddress { get => userAddress; set => userAddress = value; }
         #endregion
 
         #region Methodes
@@ -144,7 +144,7 @@ namespace BusinessLogicLayer
     {
         #region Fields
         private int plantID;
-        private int plantCategoryID;
+        private string plantCategory;
         private string plantName;
         private decimal optimalAmbientTemp;
         private decimal optimalAmbientHumidity;
@@ -164,7 +164,7 @@ namespace BusinessLogicLayer
 
         #region Properties
         public int PlantID { get => plantID; set => plantID = value; }
-        public int PlantCategoryID { get => plantCategoryID; set => plantCategoryID = value; }
+        public string PlantCategory { get => plantCategory; set => plantCategory = value; }
         public string PlantName { get => plantName; set => plantName = value; }
         public decimal OptimalAmbientTemp { get => optimalAmbientTemp; set => optimalAmbientTemp = value; }
         public decimal OptimalAmbientHumidity { get => optimalAmbientHumidity; set => optimalAmbientHumidity = value; }
