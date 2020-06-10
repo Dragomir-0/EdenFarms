@@ -2,60 +2,72 @@ USE EdenFarmsDB
 
 GO
 
-CREATE PROCEDURE spDeletetFarm
+CREATE PROCEDURE spDeleteFarm
 (
 @FarmID INT
 )
 AS
 BEGIN
-DELETE * FROM tblFarm 
+DELETE FROM tblFarm 
 WHERE FarmID=@FarmID
 END 
 
 GO
 
-CREATE PROCEDURE spDeletetPlantCategory
+CREATE PROCEDURE spDeletePlantCategory
 (
 @CategoryID INT 
 )
 AS
 BEGIN
-DELETE * FROM tblPlantCategory 
+DELETE FROM tblPlantCategory 
 WHERE PlantCategoryID=@CategoryID
 END
 
 GO
 
-CREATE PROCEDURE spDeletetPlots
+CREATE PROCEDURE spDeletePlot
 (
 @PlotID INT
 )
 AS
 BEGIN
-DELETE * FROM tblPlots 
+DELETE FROM tblPlots 
 WHERE PlotID= @PlotID
 END
 
 GO
 
-CREATE PROCEDURE spDeletetPlant
+CREATE PROCEDURE spDeletePlant
 (
 @PlantID INT
 )
 AS
 BEGIN
-DELETE * FROM tblPlant 
+DELETE FROM tblPlant 
 WHERE PlantID=@PlantID
 END 
 
 GO
 
-Create PROCEDURE spDeleteUsers
+CREATE PROCEDURE spDeleteUser
 (
 @UserID INT
 )
 AS
 BEGIN 
-DELETE * FROM tblUser 
+DELETE FROM tblUser 
 WHERE UserID = @UserID
+END
+
+GO
+
+CREATE PROCEDURE spDeleteRole
+(
+@RoleID INT
+)
+AS
+BEGIN
+DELETE FROM tblRole
+WHERE RoleID = @RoleID
 END
