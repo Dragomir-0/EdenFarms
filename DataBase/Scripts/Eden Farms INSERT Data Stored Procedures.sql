@@ -6,7 +6,7 @@ CREATE PROCEDURE spInsertFarm
 (
 @UserID INT,
 @FarmName VARCHAR(40),
-@FarmLocation VARCHAR,
+@FarmLocation VARCHAR(100),
 @LocationAlias VARCHAR(40)
 )
 AS 
@@ -17,7 +17,7 @@ END
 
 GO
 
-CREATE PROCEDURE spInserPlant
+CREATE PROCEDURE spInsertPlant
 (
 @PlantCategoryID INT,
 @PlantName VARCHAR(40),
@@ -40,7 +40,7 @@ END
 
 GO
 
-CREATE PROCEDURE spInserPlantcategory
+CREATE PROCEDURE spInsertPlantCategory
 (
 @CategoryName VARCHAR(40) ,
 @CategoryDescription VARCHAR(80) 
@@ -53,7 +53,7 @@ END
 
 GO
 
-CREATE PROCEDURE spInsertPlots
+CREATE PROCEDURE spInsertPlot
 (
 @FarmID INT,
 @PlantID INT,
@@ -68,7 +68,7 @@ END
 
 GO
 
-Create PROCEDURE spInserThetUsers
+CREATE PROCEDURE spInsertUser
 (
 @UserName VARCHAR(40),
 @UserPassword VARCHAR(50),
@@ -81,4 +81,17 @@ AS
 BEGIN
 INSERT INTO tblUser(UserName,UserPassword,VatIDNumber,ContactNumber,Email,UserAddress) 
 VALUES(@UserName,@UserPassword,@VatIDNumber,@ContactNumber,@Email,@Address)
+END
+
+GO
+
+CREATE PROCEDURE spInsertRole
+(
+@UserID INT,
+@Description VARCHAR(100)
+)
+AS
+BEGIN
+INSERT INTO tblRole(UserID,RoleDescription)
+VALUES(@UserID,@Description)
 END
