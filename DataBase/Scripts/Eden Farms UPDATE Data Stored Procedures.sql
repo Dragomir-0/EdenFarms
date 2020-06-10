@@ -17,7 +17,7 @@ SET
 UserID = @UserID,
 FarmName = @FarmName,
 FarmLocation = @FarmLocation,
-LocationAlias = @LocationAlias,
+LocationAlias = @LocationAlias
 WHERE FarmID = @FarmID
 END
 
@@ -60,7 +60,7 @@ END
 
 GO
 
-CREATE PROCEDURE UpdatePlantcategory
+CREATE PROCEDURE UpdatePlantCategory
 (
 @PlantCategoryID INT,
 @CategoryName VARCHAR(40) ,
@@ -77,7 +77,7 @@ END
 
 GO
 
-CREATE PROCEDURE spUpdatePlots
+CREATE PROCEDURE spUpdatePlot
 (
 @PlotID INT ,
 @FarmID INT ,
@@ -98,9 +98,9 @@ END
 
 GO
 
-CREATE PROCEDURE spUpdateUsers
+CREATE PROCEDURE spUpdateUser
 (
-@userID INT,
+@UserID INT,
 @UserName VARCHAR(40),
 @UserPassword VARCHAR(50),
 @VatIDNumber VARCHAR(10),
@@ -118,5 +118,22 @@ VatIDNumber = @VatIDNumber,
 ContactNumber = @ContactNumber,
 Email = @Email,
 UserAddress = @Address 
-WHERE USERID = @UserID
+WHERE UserID = @UserID
+END
+
+GO
+
+CREATE PROCEDURE spUpdateRole
+(
+@RoleID INT,
+@UserID INT,
+@Description VARCHAR(100)
+)
+AS
+BEGIN
+UPDATE tblRole
+SET
+UserID = @UserID,
+RoleDescription = @Description
+WHERE RoleID = @RoleID
 END
