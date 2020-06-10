@@ -26,14 +26,14 @@ namespace BusinessLogicLayer
         public string UserAddress { get => userAddress; set => userAddress = value; }
         #endregion
 
-        public User(int id, string uname, string vat, string con, string em, string add)
+        public User(int userIDPrm, string usernamePrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
         {
-            this.UserID = id;
-            this.Username1 = uname;
-            this.VatIDNumber = vat;
-            this.ContactNumber = con;
-            this.Email = em;
-            this.Address = add;
+            this.UserID = userIDPrm;
+            this.Username = usernamePrm;
+            this.VatIDNumber = vatIDNumberPrm;
+            this.ContactNumber = contactNumberPrm;
+            this.Emailaddress = emailaddressPrm;
+            this.UserAddress = userAddressPrm;
         }
 
         public User() { }
@@ -77,11 +77,11 @@ namespace BusinessLogicLayer
         public string LocationAlias { get => locationAlias; set => locationAlias = value; }
         #endregion
 
-        public Farm(int id, string name, string location, string alias)
+        public Farm(int farmIDPrm, string farmNamePrm, string farmLocationPrm, string alias)
         {
-            this.FarmID = id;
-            this.FarmName = name;
-            this.FarmLocation = location;
+            this.FarmID = farmIDPrm;
+            this.FarmName = farmNamePrm;
+            this.FarmLocation = farmLocationPrm;
             this.LocationAlias = alias;
         }
 
