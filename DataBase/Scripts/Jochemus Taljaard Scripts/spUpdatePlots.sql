@@ -10,7 +10,9 @@ CREATE PROCEDURE spUpdatePlots
 AS
 BEGIN
 UPDATE tblPlots 
-set 
+SET
+FarmID = @FarmID,
+PlantID = @PlantID,
 UserOverride=@UserOverride,
 PerformanceReview=@PerformanceReview
 WHERE PlotID = @PlotID

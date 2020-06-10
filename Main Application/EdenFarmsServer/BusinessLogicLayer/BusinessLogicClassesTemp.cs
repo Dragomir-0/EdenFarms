@@ -17,11 +17,6 @@ namespace BusinessLogicLayer
         private string userAddress;
         #endregion
 
-        public User()
-        {
-
-        }
-
         #region Properties
         private int UserID { get => userID; set => userID = value; }
         public string Username { get => username; set => username = value; }
@@ -30,6 +25,18 @@ namespace BusinessLogicLayer
         public string Emailaddress { get => emailaddress; set => emailaddress = value; }
         public string UserAddress { get => userAddress; set => userAddress = value; }
         #endregion
+
+        public User(int id, string uname, string vat, string con, string em, string add)
+        {
+            this.UserID = id;
+            this.Username1 = uname;
+            this.VatIDNumber = vat;
+            this.ContactNumber = con;
+            this.Email = em;
+            this.Address = add;
+        }
+
+        public User() { }
 
         #region Methodes
 
@@ -62,10 +69,6 @@ namespace BusinessLogicLayer
         private string locationAlias;
         #endregion
 
-        public Farm()
-        {
-
-        }
 
         #region Properties
         public int FarmID { get => farmID; set => farmID = value; }
@@ -73,6 +76,16 @@ namespace BusinessLogicLayer
         public string FarmLocation { get => farmLocation; set => farmLocation = value; }
         public string LocationAlias { get => locationAlias; set => locationAlias = value; }
         #endregion
+
+        public Farm(int id, string name, string location, string alias)
+        {
+            this.FarmID = id;
+            this.FarmName = name;
+            this.FarmLocation = location;
+            this.LocationAlias = alias;
+        }
+
+        public Farm() { }
 
         #region Methodes
 
@@ -103,20 +116,27 @@ namespace BusinessLogicLayer
         private int farmID;
         private int plantID;
         private string userOverride;
-        private string preformanceReview;
+        private string performanceReview;
         #endregion
-        public Plot()
-        {
-
-        }
 
         #region Properties
         public int PlotID { get => plotID; set => plotID = value; }
         public int FarmID { get => farmID; set => farmID = value; }
         public int PlantID { get => plantID; set => plantID = value; }
         public string UserOverride { get => userOverride; set => userOverride = value; }
-        public string PreformanceReview { get => preformanceReview; set => preformanceReview = value; }
+        public string PerformanceReview { get => performanceReview; set => performanceReview = value; }
         #endregion
+
+        public Plot(int id, int farm, int plant, string user, string performance)
+        {
+            this.PlotID = id;
+            this.FarmID = farm;
+            this.PlantID = plant;
+            this.UserOverride = user;
+            this.PerformanceReview = performance;
+        }
+
+        public Plot() { }
 
         #region Methodes
 
@@ -154,13 +174,10 @@ namespace BusinessLogicLayer
         private string optimalInternalLight;
         private decimal optimalInternalOxygen;
         private decimal optimalNitrogen;
-        private decimal otimalPhosphorus;
+        private decimal optimalPhosphorus;
         private decimal optimalPotassium;
         #endregion
-        public Plant()
-        {
-
-        }
+        
 
         #region Properties
         public int PlantID { get => plantID; set => plantID = value; }
@@ -174,9 +191,27 @@ namespace BusinessLogicLayer
         public string OptimalInternalLight { get => optimalInternalLight; set => optimalInternalLight = value; }
         public decimal OptimalInternalOxygen { get => optimalInternalOxygen; set => optimalInternalOxygen = value; }
         public decimal OptimalNitrogen { get => optimalNitrogen; set => optimalNitrogen = value; }
-        public decimal OtimalPhosphorus { get => otimalPhosphorus; set => otimalPhosphorus = value; }
+        public decimal OptimalPhosphorus { get => optimalPhosphorus; set => optimalPhosphorus = value; }
         public decimal OptimalPotassium { get => optimalPotassium; set => optimalPotassium = value; }
         #endregion
+
+        public Plant(int id, int cat, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optNit, decimal optPhos, decimal optPotass)
+        {
+            this.PlantID = id;
+            this.PlantCategoryID = cat;
+            this.PlantName = nm;
+            this.OptimalAmbientTemp = optAmbTemp;
+            this.OptimalAmbientHumidity = optAmbHum;
+            this.OptimalAmbientLight = optAmbLight;
+            this.OptimalInternalTemp = optIntTemp;
+            this.OptimalInternalHumidity = optIntHum;
+            this.OptimalInternalLight = optIntLight;
+            this.OptimalNitrogen = optNit;
+            this.OptimalPhosphorus = optPhos;
+            this.OptimalPotassium = optPotass;
+        }
+
+        public Plant() { }
 
         #region Methodes
 

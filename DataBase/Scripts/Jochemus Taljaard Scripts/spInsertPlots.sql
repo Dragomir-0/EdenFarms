@@ -1,15 +1,14 @@
 /* Insert Plot*/
 CREATE PROCEDURE spInsertPlots
 (
-@PlotID INT ,
-@FarmID INT ,
-@PlantID INT ,
+@FarmID INT,
+@PlantID INT,
 @UserOverride VARCHAR(40),
 @PerformanceReview VARCHAR(50)
 )
 AS 
 BEGIN
 
-INSERT INTO tblPlots(UserOverride,PerformanceReview) values(@UserOverride,@PerformanceReview)
+INSERT INTO tblPlots(FarmID,PlantID,UserOverride,PerformanceReview) values(@FarmID,@PlantID,@UserOverride,@PerformanceReview)
 
 END
