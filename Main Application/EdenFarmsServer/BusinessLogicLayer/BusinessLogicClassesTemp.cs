@@ -77,12 +77,12 @@ namespace BusinessLogicLayer
         public string LocationAlias { get => locationAlias; set => locationAlias = value; }
         #endregion
 
-        public Farm(int farmIDPrm, string farmNamePrm, string farmLocationPrm, string alias)
+        public Farm(int farmIDPrm, string farmNamePrm, string farmLocationPrm, string locationAliasPrm)
         {
             this.FarmID = farmIDPrm;
             this.FarmName = farmNamePrm;
             this.FarmLocation = farmLocationPrm;
-            this.LocationAlias = alias;
+            this.LocationAlias = locationAliasPrm;
         }
 
         public Farm() { }
