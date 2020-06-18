@@ -109,7 +109,7 @@ namespace BusinessLogicLayer
 
         #endregion
     }
-    class Plot
+    class Plot  // {Concept}
     {
         #region Fields
         private int plotID;
@@ -127,10 +127,10 @@ namespace BusinessLogicLayer
         public string PerformanceReview { get => performanceReview; set => performanceReview = value; }
         #endregion
 
-        public Plot(int id, int farm, int plant, string user, string performance)
+        public Plot(int plotIDPrm, int farmIDPrm, int plant, string user, string performance)
         {
-            this.PlotID = id;
-            this.FarmID = farm;
+            this.PlotID = plotIDPrm;
+            this.FarmID = farmIDPrm;
             this.PlantID = plant;
             this.UserOverride = user;
             this.PerformanceReview = performance;
@@ -164,7 +164,7 @@ namespace BusinessLogicLayer
     {
         #region Fields
         private int plantID;
-        private string plantCategory;
+        private string plantCategory; //Holds the name of a catagory 
         private string plantName;
         private decimal optimalAmbientTemp;
         private decimal optimalAmbientHumidity;
@@ -195,10 +195,10 @@ namespace BusinessLogicLayer
         public decimal OptimalPotassium { get => optimalPotassium; set => optimalPotassium = value; }
         #endregion
 
-        public Plant(int id, int cat, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optNit, decimal optPhos, decimal optPotass)
+        public Plant(int plantIDPrm, string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optNit, decimal optPhos, decimal optPotass)
         {
-            this.PlantID = id;
-            this.PlantCategoryID = cat;
+            this.PlantID = plantIDPrm;
+            this.PlantCategory = plantCategoryPrm;
             this.PlantName = nm;
             this.OptimalAmbientTemp = optAmbTemp;
             this.OptimalAmbientHumidity = optAmbHum;
