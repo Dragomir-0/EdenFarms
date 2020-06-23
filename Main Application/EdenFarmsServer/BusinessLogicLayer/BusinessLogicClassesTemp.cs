@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,30 @@ namespace BusinessLogicLayer
         public User() { }
 
         #region Methodes
-
+        public List<User> readAllUser()
+        {
+            DBAccess dba = new DBAccess();
+            DataTable data = new DataTable();
+            data = dba.ReadData("spSelectUser");
+            List<User> list = new List<User>();
+            foreach (DataRow item in data.Rows)
+            {
+                list.Add(new User(
+                    int.Parse(item[""].ToString()),
+                    item[""].ToString(),
+                    item[""].ToString(),
+                    item[""].ToString(),
+                    item[""].ToString(),
+                    item[""].ToString()
+                    ));
+            }
+            return list;
+        }
+        public void deleteUser(string whatToDelete)
+        {
+            DBAccess dba = new DBAccess();
+            dba.DeleteData("spDeleteUser","@USERID",whatToDelete);
+        }
         #endregion
 
         #region Overrrides
@@ -88,7 +112,28 @@ namespace BusinessLogicLayer
         public Farm() { }
 
         #region Methodes
-
+        public List<Farm> readAllFarm()
+        {
+            DBAccess dba = new DBAccess();
+            DataTable data = new DataTable();
+            data = dba.ReadData("spSelectFarm");
+            List<Farm> list = new List<Farm>();
+            foreach (DataRow item in data.Rows)
+            {
+                list.Add(new Farm(
+                    int.Parse(item[""].ToString()),
+                    item[""].ToString(),
+                    item[""].ToString(),
+                    item[""].ToString()
+                    ));
+            }
+            return list;
+        }
+        public void deleteFarm(string whatToDelete)
+        {
+            DBAccess dba = new DBAccess();
+            dba.DeleteData("spDeleteFarm", "@FarmID", whatToDelete);
+        }
         #endregion
 
         #region Overrrides
@@ -139,7 +184,29 @@ namespace BusinessLogicLayer
         public Plot() { }
 
         #region Methodes
-
+        public List<Plot> returnAllPlot()
+        {
+            DBAccess dba = new DBAccess();
+            DataTable data = new DataTable();
+            data = dba.ReadData("spSelectPlot");
+            List<Plot> list = new List<Plot>();
+            foreach (DataRow item in data.Rows)
+            {
+                list.Add(new Plot(
+                    int.Parse(item[""].ToString()),
+                    int.Parse(item[""].ToString()),
+                    int.Parse(item[""].ToString()),
+                    item[""].ToString(),
+                    item[""].ToString()
+                    ));
+            }
+            return list;
+        }
+        public void deletePlot(string whatToDelete)
+        {
+            DBAccess dba = new DBAccess();
+            dba.DeleteData("spDeletePlots", "@PlotID", whatToDelete);
+        }
         #endregion
 
         #region Overrrides
@@ -177,7 +244,7 @@ namespace BusinessLogicLayer
         private decimal optimalPhosphorus;
         private decimal optimalPotassium;
         #endregion
-        
+
 
         #region Properties
         public int PlantID { get => plantID; set => plantID = value; }
@@ -195,7 +262,7 @@ namespace BusinessLogicLayer
         public decimal OptimalPotassium { get => optimalPotassium; set => optimalPotassium = value; }
         #endregion
 
-        public Plant(int plantIDPrm, string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optNit, decimal optPhos, decimal optPotass)
+        public Plant(int plantIDPrm, string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optIntOxy, decimal optNit, decimal optPhos, decimal optPotass)
         {
             this.PlantID = plantIDPrm;
             this.PlantCategory = plantCategoryPrm;
@@ -206,6 +273,7 @@ namespace BusinessLogicLayer
             this.OptimalInternalTemp = optIntTemp;
             this.OptimalInternalHumidity = optIntHum;
             this.OptimalInternalLight = optIntLight;
+            this.OptimalInternalOxygen = optIntOxy;
             this.OptimalNitrogen = optNit;
             this.OptimalPhosphorus = optPhos;
             this.OptimalPotassium = optPotass;
@@ -214,7 +282,37 @@ namespace BusinessLogicLayer
         public Plant() { }
 
         #region Methodes
-
+        public List<Plant> returnAllPlant()
+        {
+            DBAccess dba = new DBAccess();
+            DataTable data = new DataTable();
+            data = dba.ReadData("spSelectPlant");
+            List<Plant> list = new List<Plant>();
+            foreach (DataRow item in data.Rows)
+            {
+                list.Add(new Plant(
+                    int.Parse(item[""].ToString()),
+                    item[""].ToString(),
+                    item[""].ToString(),
+                    decimal.Parse(item[""].ToString()),
+                    decimal.Parse(item[""].ToString()),
+                    item[""].ToString(),
+                    decimal.Parse(item[""].ToString()),
+                    decimal.Parse(item[""].ToString()),
+                    item[""].ToString(),
+                    decimal.Parse(item[""].ToString()),
+                    decimal.Parse(item[""].ToString()),
+                    decimal.Parse(item[""].ToString()),
+                    decimal.Parse(item[""].ToString())
+                    ));
+            }
+            return list;
+        }
+        public void deletePlant(string whatToDelete)
+        {
+            DBAccess dba = new DBAccess();
+            dba.DeleteData("spDeletetPlant", "@PlantID", whatToDelete);
+        }
         #endregion
 
         #region Overrrides
