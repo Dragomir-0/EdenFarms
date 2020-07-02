@@ -9,7 +9,10 @@ namespace ClientConsole
     abstract class Reading
     {
         #region Fields
+        //Name of the Var
         private string readingName;
+
+        //Optimal Recorded
         private string readingOptimal;
         #endregion
 

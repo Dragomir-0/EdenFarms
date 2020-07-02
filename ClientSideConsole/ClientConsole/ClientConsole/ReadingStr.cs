@@ -8,18 +8,24 @@ namespace ClientConsole
 {
     class ReadingStr : Reading
     {
+        //Value retrived from sensors
         private string readingValue;
 
-        public ReadingStr(string readingNamePrm, string readingOptimalPrm, string readingValuePrm) : base(readingNamePrm, readingOptimalPrm)
+        //Optimal Recorded
+        private string readingOptimal;
+
+        public ReadingStr(string readingNamePrm, string readingOptimalPrm, string readingValuePrm) : base(readingNamePrm)
         {
             this.ReadingValue = readingValuePrm;
+            this.ReadingOptimal = readingOptimalPrm;
         }
 
-        public ReadingStr():base()
+        public ReadingStr()
         {
 
         }
 
         public string ReadingValue { get => readingValue; set => readingValue = value; }
+        public string ReadingOptimal { get => readingOptimal; set => readingOptimal = value; }
     }
 }
