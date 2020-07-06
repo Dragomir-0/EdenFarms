@@ -12,6 +12,7 @@ namespace ClientConsole
         {
             while (true)
             {
+                //Used to disdplay info from the sensors and actions
                 foreach (Reading readingItem in itemsToDisplay)
                 {
                     Console.WriteLine(" {0}");

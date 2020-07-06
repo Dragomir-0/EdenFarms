@@ -13,7 +13,7 @@ namespace ClientConsole
         private string readingName;
         #endregion
 
-        public Reading(string readingNamePrm, string readingOptimalPrm)
+        public Reading(string readingNamePrm)
         {
             this.ReadingName = readingNamePrm;
         }
