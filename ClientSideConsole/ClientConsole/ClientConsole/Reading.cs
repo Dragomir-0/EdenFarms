@@ -11,6 +11,7 @@ namespace ClientConsole
         #region Fields
         //Name of the Var
         private string readingName;
+        private List<string> action;
         #endregion
 
         public Reading(string readingNamePrm)
@@ -25,7 +26,13 @@ namespace ClientConsole
 
         #region Properties
         public string ReadingName { get => readingName; set => readingName = value; }
+        public List<string> Action { get => action; set => action = value; }
         #endregion
 
+        #region Methodes 
+        abstract public List<string> CheckInfo();
+        //abstract public void ();
+
+        #endregion
     }
 }
