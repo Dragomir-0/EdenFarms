@@ -11,8 +11,19 @@ CREATE PROCEDURE spInsertFarm
 )
 AS 
 BEGIN
-INSERT INTO tblFarm(UserID,FarmName,FarmLocation,LocationAlias) 
-VALUES(@UserID,@FarmName,@FarmLocation,@LocationAlias)
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+			INSERT INTO tblFarm(UserID,FarmName,FarmLocation,LocationAlias) 
+			VALUES(@UserID,@FarmName,@FarmLocation,@LocationAlias)
+
+		COMMIT
+		PRINT 'spInsertFarm Transaction Successful'
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		PRINT 'spInsertFarm Transaction UNSUCCESSFUL'
+	END CATCH
 END
 
 GO
@@ -34,8 +45,19 @@ CREATE PROCEDURE spInsertPlant
 )
 AS 
 BEGIN
-INSERT INTO tblPlant(PlantCategoryID,PlantName,OptimalAmbientTemp,OptimalAmbientHumidity,OptimalAmbientLight,OptimalInternalTemp,OptimalInternalHumidity,OptimalInternalLight,OptimalInternalOxygen,OptimalNitrogen,OptimalPhosphorus,OptimalPotassium) 
-VALUES(@PlantCategoryID,@PlantName,@OptimalAmbientTemp,@OptimalAmbientHumidity,@OptimalAmbientLight,@OptimalInternalTemp,@OptimalInternalHumidity,@OptimalInternalLight,@OptimalInternalOxygen,@OptimalNitrogen,@OptimalPhosphorus,@OptimalPotassium)
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+			INSERT INTO tblPlant(PlantCategoryID,PlantName,OptimalAmbientTemp,OptimalAmbientHumidity,OptimalAmbientLight,OptimalInternalTemp,OptimalInternalHumidity,OptimalInternalLight,OptimalInternalOxygen,OptimalNitrogen,OptimalPhosphorus,OptimalPotassium) 
+			VALUES(@PlantCategoryID,@PlantName,@OptimalAmbientTemp,@OptimalAmbientHumidity,@OptimalAmbientLight,@OptimalInternalTemp,@OptimalInternalHumidity,@OptimalInternalLight,@OptimalInternalOxygen,@OptimalNitrogen,@OptimalPhosphorus,@OptimalPotassium)
+
+		COMMIT
+		PRINT 'spInsertPlant Transaction Successful'
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		PRINT 'spInsertPlant Transaction UNSUCCESSFUL'
+	END CATCH
 END
 
 GO
@@ -47,8 +69,19 @@ CREATE PROCEDURE spInsertPlantCategory
 )
 AS
 BEGIN
-INSERT INTO tblPlantCategory(CategoryName,CategoryDescription) 
-VALUES(@CategoryName,@CategoryDescription)
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+			INSERT INTO tblPlantCategory(CategoryName,CategoryDescription) 
+			VALUES(@CategoryName,@CategoryDescription)
+
+		COMMIT
+		PRINT 'spInsertPlantCategory Transaction Successful'
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		PRINT 'spInsertPlantCategory Transaction UNSUCCESSFUL'
+	END CATCH
 END
 
 GO
@@ -62,14 +95,26 @@ CREATE PROCEDURE spInsertPlot
 )
 AS 
 BEGIN
-INSERT INTO tblPlots(FarmID,PlantID,UserOverride,PerformanceReview) 
-VALUES(@FarmID,@PlantID,@UserOverride,@PerformanceReview)
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+			INSERT INTO tblPlots(FarmID,PlantID,UserOverride,PerformanceReview) 
+			VALUES(@FarmID,@PlantID,@UserOverride,@PerformanceReview)
+
+		COMMIT
+		PRINT 'spInsertPlot Transaction Successful'
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		PRINT 'spInsertPlot Transaction UNSUCCESSFUL'
+	END CATCH
 END
 
 GO
 
 CREATE PROCEDURE spInsertUser
 (
+@RoleID INT,
 @UserName VARCHAR(40),
 @UserPassword VARCHAR(50),
 @VatIDNumber VARCHAR(10),
@@ -79,19 +124,40 @@ CREATE PROCEDURE spInsertUser
 )
 AS 
 BEGIN
-INSERT INTO tblUser(UserName,UserPassword,VatIDNumber,ContactNumber,Email,UserAddress) 
-VALUES(@UserName,@UserPassword,@VatIDNumber,@ContactNumber,@Email,@Address)
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+			INSERT INTO tblUser(RoleID,UserName,UserPassword,VatIDNumber,ContactNumber,Email,UserAddress) 
+			VALUES(@RoleID,@UserName,@UserPassword,@VatIDNumber,@ContactNumber,@Email,@Address)
+
+		COMMIT
+		PRINT 'spInsertUser Transaction Successful'
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		PRINT 'spInsertUser Transaction UNSUCCESSFUL'
+	END CATCH
 END
 
 GO
 
 CREATE PROCEDURE spInsertRole
 (
-@UserID INT,
 @Description VARCHAR(100)
 )
 AS
 BEGIN
-INSERT INTO tblRole(UserID,RoleDescription)
-VALUES(@UserID,@Description)
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+			INSERT INTO tblRole(RoleDescription)
+			VALUES(@Description)
+
+		COMMIT
+		PRINT 'spInsertRole Transaction Successful'
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		PRINT 'spInsertRole Transaction UNSUCCESSFUL'
+	END CATCH
 END
