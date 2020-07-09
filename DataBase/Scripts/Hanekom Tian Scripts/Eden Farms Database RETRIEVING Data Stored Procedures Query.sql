@@ -401,6 +401,17 @@ END
 
 GO
 
+CREATE PROCEDURE spListUserRoleIDDetails
+@id INT
+AS
+BEGIN
+SELECT *
+FROM tblUser
+WHERE RoleID = @id
+END
+
+GO
+
 CREATE PROCEDURE spListUserNameDetails
 @name VARCHAR(40)
 AS
@@ -503,6 +514,15 @@ END
 GO
 
 /* LIST ROLE DETAILS PROCEDURES */
+
+CREATE PROCEDURE spListRoles
+AS
+BEGIN
+SELECT *
+FROM tblRole
+END
+
+GO
 
 CREATE PROCEDURE spListRoleIDDetails
 @id INT
