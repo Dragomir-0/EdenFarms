@@ -36,7 +36,7 @@ namespace ClientConsole
                 returnThis.Add(this.Action[0]);
                 returnThis.Add("0");
             }
-            else if (this.readingValue == this.readingOptimal)
+            else if (this.readingValue == this.readingOptimal) 
             {
                 returnThis.Add(this.Action[1]);
                 returnThis.Add("1");
