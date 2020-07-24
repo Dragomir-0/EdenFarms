@@ -55,6 +55,22 @@ namespace ClientConsole
             return returnThis;
         }
 
+        public List<ReadingsDec> ReturnReadings()
+        {
+            List<ReadingsDec> readings = new List<ReadingsDec>();
+
+            readings.Add(new ReadingsDec("OptimalAmbientTemp", "Set cooling system lower to 25", Convert.ToDecimal(28), Convert.ToDecimal(30)));
+            readings.Add(new ReadingsDec("OptimalAmbientHumidity", "Slow down fog water mist sprayers", Convert.ToDecimal(55), Convert.ToDecimal(60)));
+            readings.Add(new ReadingsDec("OptimalInternalTemp", "Set internal cooling system lower to 19", Convert.ToDecimal(20), Convert.ToDecimal(24)));
+            readings.Add(new ReadingsDec("OptimalInternalHumidity", "Give more water", Convert.ToDecimal(40), Convert.ToDecimal(29)));
+            readings.Add(new ReadingsDec("OptimalInternalOxygen", "Increase oxygen level", Convert.ToDecimal(36), Convert.ToDecimal(30)));
+            readings.Add(new ReadingsDec("OptimalNitrogen", "Reduce Nitrogen docage", Convert.ToDecimal(4), Convert.ToDecimal(5)));
+            readings.Add(new ReadingsDec("OptimalPhosphorus", "Reduce Phosphorus docage", Convert.ToDecimal(40), Convert.ToDecimal(62)));
+            readings.Add(new ReadingsDec("OptimalPotassium", "Increase Potassium docage", Convert.ToDecimal(7), Convert.ToDecimal(4)));
+
+            return readings;
+        }
+
     }
 
 }
