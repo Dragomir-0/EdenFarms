@@ -13,4 +13,3 @@ window.location.href ="../HTML/User.html";
 return true; 
 }
 }
-
