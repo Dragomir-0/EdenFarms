@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data_Access_Layer;
+using DataAccessLayer;
 
 namespace BusinessLogicLayer
 {
@@ -332,5 +334,45 @@ namespace BusinessLogicLayer
         }
 
         #endregion
+    }
+    public class Login
+    {
+        private string username;
+        private string password;
+
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
+        public Login(string u, string p)
+        {
+            this.Username = u;
+            this.Password = p;
+        }
+
+        public Login() { }
+
+        public bool AttemptLogin(string username, string password)
+        {
+            string uname = "admin";
+            string pword = "admin";
+            bool isValid = false;
+            if (uname.Equals(username))
+            {
+                if (pword.Equals(password))
+                {
+                    isValid = true;
+                }
+            }
+            return isValid;
+        }
     }
 }

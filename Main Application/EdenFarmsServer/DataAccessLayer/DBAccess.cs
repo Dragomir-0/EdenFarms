@@ -48,7 +48,7 @@ namespace Data_Access_Layer
             return output; //returns the datatable
         }
 
-        public void InsertData(List<> whatToAdd, string tableName)
+        public void InsertData(List<object> whatToAdd, string tableName)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -65,7 +65,7 @@ namespace Data_Access_Layer
             }
         }
 
-        public void UpdateData(List<> newValuesForUpdate, string tableName)
+        public void UpdateData(List<object> newValuesForUpdate, string tableName)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
