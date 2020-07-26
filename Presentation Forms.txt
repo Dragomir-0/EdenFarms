@@ -1,0 +1,13 @@
+Login
+
+-> Scientific
+--- View Plants
+--- Edit Optimal values
+--- Add Plants 
+
+-> Client
+--- View clients (Add/Edit/Remove)
+---  Manage client plots (Add/Edit/Remove) 
+
+-> Technical
+--- Manage personal staff(Add/Edit/Remove)
