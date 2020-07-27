@@ -46,11 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClientForm.Designer.cs">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPlantForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPlantForm.Designer.cs">
       <DependentUpon>AddPlantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPlotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPlotForm.Designer.cs">
+      <DependentUpon>AddPlotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStaffForm.Designer.cs">
+      <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteClientForm.Designer.cs">
+      <DependentUpon>DeleteClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePlotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletePlotForm.Designer.cs">
+      <DependentUpon>DeletePlotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteStaffForm.Designer.cs">
+      <DependentUpon>DeleteStaffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TechnicalForm.cs">
       <SubType>Form</SubType>
@@ -84,8 +120,35 @@
     <Compile Include="ClientForm.Designer.cs">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateClientForm.Designer.cs">
+      <DependentUpon>UpdateClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePlotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePlotForm.Designer.cs">
+      <DependentUpon>UpdatePlotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStaffForm.Designer.cs">
+      <DependentUpon>UpdateStaffForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPlantForm.resx">
       <DependentUpon>AddPlantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPlotForm.resx">
+      <DependentUpon>AddPlotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStaffForm.resx">
+      <DependentUpon>AddStaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditValuesForm.resx">
       <DependentUpon>EditValuesForm.cs</DependentUpon>
@@ -110,6 +173,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TechnicalForm.resx">
       <DependentUpon>TechnicalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateClientForm.resx">
+      <DependentUpon>UpdateClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePlotForm.resx">
+      <DependentUpon>UpdatePlotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStaffForm.resx">
+      <DependentUpon>UpdateStaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
