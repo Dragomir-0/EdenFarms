@@ -9,12 +9,12 @@ namespace ClientConsole
     class ReadingsDec : Reading
     {
         //Value retrived from sensors
-        private decimal readingValue;
+        private double readingValue;
 
         //Optimal Recorded
-        private decimal readingOptimal;
+        private double readingOptimal;
 
-        public ReadingsDec(string readingNamePrm, decimal readingOptimalPrm, decimal readingValuePrm) : base(readingNamePrm)
+        public ReadingsDec(string readingNamePrm, List<string> actionsPrm, double readingOptimalPrm, double readingValuePrm) : base(readingNamePrm, actionsPrm)
         {
             this.ReadingValue = readingValuePrm;
             this.ReadingOptimal = readingOptimalPrm;
@@ -25,8 +25,8 @@ namespace ClientConsole
 
         }
 
-        public decimal ReadingValue { get => readingValue; set => readingValue = value; }
-        public decimal ReadingOptimal { get => readingOptimal; set => readingOptimal = value; }
+        public double ReadingValue { get => readingValue; set => readingValue = value; }
+        public double ReadingOptimal { get => readingOptimal; set => readingOptimal = value; }
 
         public override List<string> CheckInfo()
         {
@@ -59,18 +59,48 @@ namespace ClientConsole
         {
             List<ReadingsDec> readings = new List<ReadingsDec>();
 
-            readings.Add(new ReadingsDec("OptimalAmbientTemp", "Set cooling system lower to 25", Convert.ToDecimal(28), Convert.ToDecimal(30)));
-            readings.Add(new ReadingsDec("OptimalAmbientHumidity", "Slow down fog water mist sprayers", Convert.ToDecimal(55), Convert.ToDecimal(60)));
-            readings.Add(new ReadingsDec("OptimalInternalTemp", "Set internal cooling system lower to 19", Convert.ToDecimal(20), Convert.ToDecimal(24)));
-            readings.Add(new ReadingsDec("OptimalInternalHumidity", "Give more water", Convert.ToDecimal(40), Convert.ToDecimal(29)));
-            readings.Add(new ReadingsDec("OptimalInternalOxygen", "Increase oxygen level", Convert.ToDecimal(36), Convert.ToDecimal(30)));
-            readings.Add(new ReadingsDec("OptimalNitrogen", "Reduce Nitrogen docage", Convert.ToDecimal(4), Convert.ToDecimal(5)));
-            readings.Add(new ReadingsDec("OptimalPhosphorus", "Reduce Phosphorus docage", Convert.ToDecimal(40), Convert.ToDecimal(62)));
-            readings.Add(new ReadingsDec("OptimalPotassium", "Increase Potassium docage", Convert.ToDecimal(7), Convert.ToDecimal(4)));
+            readings.Add(new ReadingsDec("OptimalAmbientTemp",      new List<string> { "Activate heat Lamps",           "Stable -No Action", "Deactivate heatlamps" , "Check Hardware!" },  28,30));
+            readings.Add(new ReadingsDec("OptimalAmbientHumidity",  new List<string> { "Increae Flow rate",             "Stable -No Action", "Increase Air Flow"    , "Check Hardware!" },  55, 60));
+            readings.Add(new ReadingsDec("OptimalInternalTemp",     new List<string> { "Activate HeatLamps",            "Stable -No Action", "Deactivcate Heatlamps", "Check Hardware!" },  20, 24));
+            readings.Add(new ReadingsDec("OptimalInternalHumidity", new List<string> { "Give more water",               "Stable -No Action", "Increase Air Flow"    , "Check Hardware!" },  40, 29));
+            readings.Add(new ReadingsDec("OptimalInternalOxygen",   new List<string> { "Increase oxygen level",         "Stable -No Action", "Irrelevant"           , "Check Hardware!" },  36, 30));
+            readings.Add(new ReadingsDec("OptimalNitrogen",         new List<string> { "Increase Nitrogen docage",      "Stable -No Action", "Montior Non-Critical" , "Check Hardware!" },  4, 5));
+            readings.Add(new ReadingsDec("OptimalPhosphorus",       new List<string> { "Increase Phosphorus docage",    "Stable -No Action", "Montior Non-Critical" , "Check Hardware!" },  40, 62));
+            readings.Add(new ReadingsDec("OptimalPotassium",        new List<string> { "Increase Potassium docage",     "Stable -No Action", "Montior Non-Critical" , "Check Hardware!" },  7, 4));
 
             return readings;
         }
 
+        void GetRandomDec()
+        {
+            
+            double minimum = (Convert.ToInt32(this.ReadingOptimal) * 0.8);
+            double maximum = (Convert.ToInt32(this.ReadingOptimal) * 1.2);
+            Random randomGen = new Random();
+            this.ReadingValue = randomGen.NextDouble() * (maximum - minimum) + minimum;
+            
+        }
+
+        public int GenerateTest()
+        {
+            this.GetRandomDec();
+            if (this.ReadingValue > this.ReadingOptimal)
+            {
+                return 0;
+            }
+            else if (this.ReadingValue == this.ReadingOptimal)
+            {
+                return 1;
+            }
+            else if (this.ReadingValue < this.ReadingOptimal)
+            {
+                return 2;
+            }
+            
+            
+            return 3;
+            
+        }
     }
 
 }

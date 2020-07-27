@@ -14,7 +14,7 @@ namespace ClientConsole
         //Optimal Recorded
         private string readingOptimal;
 
-        public ReadingStr(string readingNamePrm, string readingOptimalPrm, string readingValuePrm) : base(readingNamePrm)
+        public ReadingStr(string readingNamePrm, string readingOptimalPrm, string readingValuePrm) : base(readingNamePrm, new List<string> { })
         {
             this.ReadingValue = readingValuePrm;
             this.ReadingOptimal = readingOptimalPrm;

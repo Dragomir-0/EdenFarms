@@ -14,9 +14,10 @@ namespace ClientConsole
         private List<string> action;
         #endregion
 
-        public Reading(string readingNamePrm)
+        public Reading(string readingNamePrm, List<string> actionPrm)
         {
             this.ReadingName = readingNamePrm;
+            this.Action = actionPrm;
         }
 
         public Reading()
