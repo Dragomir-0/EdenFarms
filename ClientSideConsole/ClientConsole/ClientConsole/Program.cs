@@ -10,27 +10,47 @@ namespace ClientConsole
     {
         static void Main(string[] args)
         {
-
-            List<Reading> itemsToDisplay = new List<Reading>();
+            ReadingsDec readingHandler = new ReadingsDec();
+            List<ReadingsDec> itemsToDisplay = readingHandler.ReturnReadings();
 
 
             while (true)
             {
                 //Used to disdplay info from the sensors and actions
-                foreach (Reading readingItem in itemsToDisplay)
+                foreach (ReadingsDec readingItem in itemsToDisplay)
                 {
+                    int test = readingItem.GenerateTest();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write    ("Property:   ");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine(readingItem.ReadingName);
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine(" {0}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write    ("Optimal:    ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(readingItem.ReadingOptimal);
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine(" {0}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write    ("True Value: ");
+                    UpdateEnviroment(test);
+                    Console.WriteLine(readingItem.ReadingValue);
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine(" {0}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine();
+                    Console.Write    ("Action:     ");
+                    UpdateEnviroment(test);
+                    Console.WriteLine(readingItem.Action[test]);
+                    
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine("This is for demonstation purposes only");
-                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("----------------------------------");
+                    Console.WriteLine();
                 }
-                
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("This is for demonstation purposes only");
+                Console.ReadKey();
+                Console.Clear();
             }
+
         }
         
         public static void UpdateEnviroment(int test)
@@ -44,9 +64,10 @@ namespace ClientConsole
                     Console.ForegroundColor = ConsoleColor.Green;
                     break;
                 case 2:
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
                 default:
+                    Console.ForegroundColor = ConsoleColor.Red;
                     break;
             }
         }

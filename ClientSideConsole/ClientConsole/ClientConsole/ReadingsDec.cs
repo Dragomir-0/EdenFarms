@@ -59,28 +59,48 @@ namespace ClientConsole
         {
             List<ReadingsDec> readings = new List<ReadingsDec>();
 
-            readings.Add(new ReadingsDec("OptimalAmbientTemp",      new List<string> { "Activate heat Lamps",           "Stable -No Action", "Deactivate heatlamps" },  28,30));
-            readings.Add(new ReadingsDec("OptimalAmbientHumidity",  new List<string> { "Increae Flow rate",             "Stable -No Action", "Increase Air Flow"    },  55, 60));
-            readings.Add(new ReadingsDec("OptimalInternalTemp",     new List<string> { "Activate HeatLamps",            "Stable -No Action", "Deactivcate Heatlamps"},  20, 24));
-            readings.Add(new ReadingsDec("OptimalInternalHumidity", new List<string> { "Give more water",               "Stable -No Action", "Increase Air Flow"    },  40, 29));
-            readings.Add(new ReadingsDec("OptimalInternalOxygen",   new List<string> { "Increase oxygen level",         "Stable -No Action", "Irrelevant"           },  36, 30));
-            readings.Add(new ReadingsDec("OptimalNitrogen",         new List<string> { "Increase Nitrogen docage",      "Stable -No Action", "Montior Non-Critical" },  4, 5));
-            readings.Add(new ReadingsDec("OptimalPhosphorus",       new List<string> { "Increase Phosphorus docage",    "Stable -No Action", "Montior Non-Critical" },  40, 62));
-            readings.Add(new ReadingsDec("OptimalPotassium",        new List<string> { "Increase Potassium docage",     "Stable -No Action", "Montior Non-Critical" },  7, 4));
+            readings.Add(new ReadingsDec("OptimalAmbientTemp",      new List<string> { "Activate heat Lamps",           "Stable -No Action", "Deactivate heatlamps" , "Check Hardware!" },  28,30));
+            readings.Add(new ReadingsDec("OptimalAmbientHumidity",  new List<string> { "Increae Flow rate",             "Stable -No Action", "Increase Air Flow"    , "Check Hardware!" },  55, 60));
+            readings.Add(new ReadingsDec("OptimalInternalTemp",     new List<string> { "Activate HeatLamps",            "Stable -No Action", "Deactivcate Heatlamps", "Check Hardware!" },  20, 24));
+            readings.Add(new ReadingsDec("OptimalInternalHumidity", new List<string> { "Give more water",               "Stable -No Action", "Increase Air Flow"    , "Check Hardware!" },  40, 29));
+            readings.Add(new ReadingsDec("OptimalInternalOxygen",   new List<string> { "Increase oxygen level",         "Stable -No Action", "Irrelevant"           , "Check Hardware!" },  36, 30));
+            readings.Add(new ReadingsDec("OptimalNitrogen",         new List<string> { "Increase Nitrogen docage",      "Stable -No Action", "Montior Non-Critical" , "Check Hardware!" },  4, 5));
+            readings.Add(new ReadingsDec("OptimalPhosphorus",       new List<string> { "Increase Phosphorus docage",    "Stable -No Action", "Montior Non-Critical" , "Check Hardware!" },  40, 62));
+            readings.Add(new ReadingsDec("OptimalPotassium",        new List<string> { "Increase Potassium docage",     "Stable -No Action", "Montior Non-Critical" , "Check Hardware!" },  7, 4));
 
             return readings;
         }
 
-        double GetRandomDec()
+        void GetRandomDec()
         {
             
             double minimum = (Convert.ToInt32(this.ReadingOptimal) * 0.8);
             double maximum = (Convert.ToInt32(this.ReadingOptimal) * 1.2);
             Random randomGen = new Random();
-            return randomGen.NextDouble() * (maximum - minimum) + minimum;
+            this.ReadingValue = randomGen.NextDouble() * (maximum - minimum) + minimum;
             
         }
 
+        public int GenerateTest()
+        {
+            this.GetRandomDec();
+            if (this.ReadingValue > this.ReadingOptimal)
+            {
+                return 0;
+            }
+            else if (this.ReadingValue == this.ReadingOptimal)
+            {
+                return 1;
+            }
+            else if (this.ReadingValue < this.ReadingOptimal)
+            {
+                return 2;
+            }
+            
+            
+            return 3;
+            
+        }
     }
 
 }
