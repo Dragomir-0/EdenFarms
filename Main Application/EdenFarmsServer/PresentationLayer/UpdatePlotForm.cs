@@ -16,5 +16,12 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClientForm cf = new ClientForm();
+            cf.Show();
+            this.Hide();
+        }
     }
 }

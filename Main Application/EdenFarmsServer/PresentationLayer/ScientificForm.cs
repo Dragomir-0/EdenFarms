@@ -19,7 +19,9 @@ namespace PresentationLayer
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            EditValuesForm evf = new EditValuesForm();
+            evf.Show();
+            this.Hide();
         }
 
         private void btnView_Click(object sender, EventArgs e)
