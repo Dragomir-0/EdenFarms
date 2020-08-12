@@ -31,12 +31,16 @@ namespace PresentationLayer
 
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
-
+            UpdateStaffForm usf = new UpdateStaffForm();
+            usf.Show();
+            this.Hide();
         }
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-
+            AddStaffForm asf = new AddStaffForm();
+            asf.Show();
+            this.Hide();
         }
     }
 }

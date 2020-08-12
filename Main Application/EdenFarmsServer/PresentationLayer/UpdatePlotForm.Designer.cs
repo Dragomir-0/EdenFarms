@@ -31,14 +31,14 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFarmID = new System.Windows.Forms.TextBox();
-            this.txtPlant = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtPerformance = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPlant = new System.Windows.Forms.TextBox();
+            this.txtFarmID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel1
             // 
@@ -77,46 +78,19 @@
             this.panel1.Size = new System.Drawing.Size(377, 126);
             this.panel1.TabIndex = 6;
             // 
-            // label1
+            // txtPerformance
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Farm ID";
+            this.txtPerformance.Location = new System.Drawing.Point(142, 90);
+            this.txtPerformance.Name = "txtPerformance";
+            this.txtPerformance.Size = new System.Drawing.Size(210, 20);
+            this.txtPerformance.TabIndex = 7;
             // 
-            // txtFarmID
+            // textBox1
             // 
-            this.txtFarmID.Location = new System.Drawing.Point(142, 12);
-            this.txtFarmID.Name = "txtFarmID";
-            this.txtFarmID.Size = new System.Drawing.Size(210, 20);
-            this.txtFarmID.TabIndex = 1;
-            // 
-            // txtPlant
-            // 
-            this.txtPlant.Location = new System.Drawing.Point(142, 38);
-            this.txtPlant.Name = "txtPlant";
-            this.txtPlant.Size = new System.Drawing.Size(210, 20);
-            this.txtPlant.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Plant";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "User Override";
+            this.textBox1.Location = new System.Drawing.Point(142, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(210, 20);
+            this.textBox1.TabIndex = 6;
             // 
             // label4
             // 
@@ -127,19 +101,46 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Performance Review";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "User Override";
             // 
-            // txtPerformance
+            // label2
             // 
-            this.txtPerformance.Location = new System.Drawing.Point(142, 90);
-            this.txtPerformance.Name = "txtPerformance";
-            this.txtPerformance.Size = new System.Drawing.Size(210, 20);
-            this.txtPerformance.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Plant";
+            // 
+            // txtPlant
+            // 
+            this.txtPlant.Location = new System.Drawing.Point(142, 38);
+            this.txtPlant.Name = "txtPlant";
+            this.txtPlant.Size = new System.Drawing.Size(210, 20);
+            this.txtPlant.TabIndex = 2;
+            // 
+            // txtFarmID
+            // 
+            this.txtFarmID.Location = new System.Drawing.Point(142, 12);
+            this.txtFarmID.Name = "txtFarmID";
+            this.txtFarmID.Size = new System.Drawing.Size(210, 20);
+            this.txtFarmID.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Farm ID";
             // 
             // UpdatePlotForm
             // 

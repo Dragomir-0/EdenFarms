@@ -32,15 +32,15 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtIDNum = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtContactNumber = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtContactNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtIDNum = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,7 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add Client";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
@@ -61,6 +62,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -90,44 +92,21 @@
             this.panel1.Size = new System.Drawing.Size(363, 144);
             this.panel1.TabIndex = 5;
             // 
-            // txtUsername
+            // txtAddress
             // 
-            this.txtUsername.Location = new System.Drawing.Point(135, 6);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(200, 20);
-            this.txtUsername.TabIndex = 5;
+            this.txtAddress.Location = new System.Drawing.Point(135, 110);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(200, 20);
+            this.txtAddress.TabIndex = 13;
             // 
-            // txtIDNum
+            // label5
             // 
-            this.txtIDNum.Location = new System.Drawing.Point(135, 32);
-            this.txtIDNum.Name = "txtIDNum";
-            this.txtIDNum.Size = new System.Drawing.Size(200, 20);
-            this.txtIDNum.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "ID Number";
-            // 
-            // txtContactNumber
-            // 
-            this.txtContactNumber.Location = new System.Drawing.Point(135, 58);
-            this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(200, 20);
-            this.txtContactNumber.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Contact Number";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Address";
             // 
             // txtEmail
             // 
@@ -145,21 +124,44 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Email";
             // 
-            // txtAddress
+            // txtContactNumber
             // 
-            this.txtAddress.Location = new System.Drawing.Point(135, 110);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(200, 20);
-            this.txtAddress.TabIndex = 13;
+            this.txtContactNumber.Location = new System.Drawing.Point(135, 58);
+            this.txtContactNumber.Name = "txtContactNumber";
+            this.txtContactNumber.Size = new System.Drawing.Size(200, 20);
+            this.txtContactNumber.TabIndex = 9;
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 113);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Address";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Contact Number";
+            // 
+            // txtIDNum
+            // 
+            this.txtIDNum.Location = new System.Drawing.Point(135, 32);
+            this.txtIDNum.Name = "txtIDNum";
+            this.txtIDNum.Size = new System.Drawing.Size(200, 20);
+            this.txtIDNum.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "ID Number";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(135, 6);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(200, 20);
+            this.txtUsername.TabIndex = 5;
             // 
             // AddClientForm
             // 

@@ -33,6 +33,9 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnScientific = new System.Windows.Forms.Button();
+            this.btnClient = new System.Windows.Forms.Button();
+            this.btnStaff = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,11 +81,44 @@
             this.txtPassword.Size = new System.Drawing.Size(177, 20);
             this.txtPassword.TabIndex = 4;
             // 
+            // btnScientific
+            // 
+            this.btnScientific.Location = new System.Drawing.Point(657, 99);
+            this.btnScientific.Name = "btnScientific";
+            this.btnScientific.Size = new System.Drawing.Size(75, 23);
+            this.btnScientific.TabIndex = 5;
+            this.btnScientific.Text = "Scientific";
+            this.btnScientific.UseVisualStyleBackColor = true;
+            this.btnScientific.Click += new System.EventHandler(this.btnScientific_Click);
+            // 
+            // btnClient
+            // 
+            this.btnClient.Location = new System.Drawing.Point(657, 149);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(75, 23);
+            this.btnClient.TabIndex = 6;
+            this.btnClient.Text = "Client";
+            this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
+            // 
+            // btnStaff
+            // 
+            this.btnStaff.Location = new System.Drawing.Point(657, 203);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(75, 23);
+            this.btnStaff.TabIndex = 7;
+            this.btnStaff.Text = "Staff";
+            this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStaff);
+            this.Controls.Add(this.btnClient);
+            this.Controls.Add(this.btnScientific);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnLogin);
@@ -102,6 +138,9 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnScientific;
+        private System.Windows.Forms.Button btnClient;
+        private System.Windows.Forms.Button btnStaff;
     }
 }
 
