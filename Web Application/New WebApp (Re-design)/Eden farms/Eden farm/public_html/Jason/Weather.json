@@ -1,0 +1,28 @@
+
+{
+    "ip": "197.91.138.234",
+    "city": "Allen's Nek",
+    "region": "Gauteng",
+    "region_code": "GP",
+    "country": "ZA",
+    "country_code": "ZA",
+    "country_code_iso3": "ZAF",
+    "country_capital": "Pretoria",
+    "country_tld": ".za",
+    "country_name": "South Africa",
+    "continent_code": "AF",
+    "in_eu": false,
+    "postal": "1700",
+    "latitude": -26.1292,
+    "longitude": 27.9123,
+    "timezone": "Africa/Johannesburg",
+    "utc_offset": "+0200",
+    "country_calling_code": "+27",
+    "currency": "ZAR",
+    "currency_name": "Rand",
+    "languages": "zu,xh,af,nso,en-ZA,tn,st,ts,ss,ve,nr",
+    "country_area": 1219912.0,
+    "country_population": 49000000.0,
+    "asn": "AS10474",
+    "org": "OPTINET"
+}

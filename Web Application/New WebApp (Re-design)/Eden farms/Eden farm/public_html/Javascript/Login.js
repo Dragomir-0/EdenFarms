@@ -9,7 +9,8 @@ return false;
 }
 else 
 {
-window.location.href ="../HTML/User.html";
+window.location.href ="../HTML/Home.html";
 return true; 
 }
 }
+
