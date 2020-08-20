@@ -1,0 +1,6 @@
+{
+    "name": "Eden_farm", "version": "1.0.0", "keywords": [
+        "util", "functional", "server", "client", "browser"
+    ], "author": "Riaan", "contributors": [
+    ], "dependencies": {}
+}
