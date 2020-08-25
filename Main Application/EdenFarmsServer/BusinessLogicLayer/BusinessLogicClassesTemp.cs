@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 using Data_Access_Layer;
 using DataAccessLayer;
 
@@ -42,29 +43,30 @@ namespace BusinessLogicLayer
         public User() { }
 
         #region Methodes
-        public List<User> readAllUser()
+        public DataTable readUser()
         {
             DBAccess dba = new DBAccess();
             DataTable data = new DataTable();
-            data = dba.ReadData("spSelectUser");
-            List<User> list = new List<User>();
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new User(
-                    int.Parse(item[""].ToString()),
-                    item[""].ToString(),
-                    item[""].ToString(),
-                    item[""].ToString(),
-                    item[""].ToString(),
-                    item[""].ToString()
-                    ));
-            }
-            return list;
+            data = dba.spSelectUsers();
+            return data;
         }
-        public void deleteUser(string whatToDelete)
+
+        public void deleteUser(int id)
         {
             DBAccess dba = new DBAccess();
-            dba.DeleteData("spDeleteUser","@USERID",whatToDelete);
+            dba.spDeleteUsers(id);
+        }
+
+        public void updateUser(ArrayList list, int id)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spUpdateUsers(list, id);
+        }
+
+        public void insertUser(ArrayList list)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spInserThetUsers(list);
         }
         #endregion
 
@@ -114,27 +116,30 @@ namespace BusinessLogicLayer
         public Farm() { }
 
         #region Methodes
-        public List<Farm> readAllFarm()
+        public DataTable readFarm()
         {
             DBAccess dba = new DBAccess();
             DataTable data = new DataTable();
-            data = dba.ReadData("spSelectFarm");
-            List<Farm> list = new List<Farm>();
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new Farm(
-                    int.Parse(item[""].ToString()),
-                    item[""].ToString(),
-                    item[""].ToString(),
-                    item[""].ToString()
-                    ));
-            }
-            return list;
+            data = dba.spSelectFarm();
+            return data;
         }
-        public void deleteFarm(string whatToDelete)
+
+        public void deleteFarm(int id)
         {
             DBAccess dba = new DBAccess();
-            dba.DeleteData("spDeleteFarm", "@FarmID", whatToDelete);
+            dba.spDeleteFarm(id);
+        }
+
+        public void updateFarm(ArrayList list, int id)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spUpdateFarm(list, id);
+        }
+
+        public void insertFarm(ArrayList list)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spInsertFarm(list);
         }
         #endregion
 
@@ -186,28 +191,30 @@ namespace BusinessLogicLayer
         public Plot() { }
 
         #region Methodes
-        public List<Plot> returnAllPlot()
+        public DataTable readPlot()
         {
             DBAccess dba = new DBAccess();
             DataTable data = new DataTable();
-            data = dba.ReadData("spSelectPlot");
-            List<Plot> list = new List<Plot>();
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new Plot(
-                    int.Parse(item[""].ToString()),
-                    int.Parse(item[""].ToString()),
-                    int.Parse(item[""].ToString()),
-                    item[""].ToString(),
-                    item[""].ToString()
-                    ));
-            }
-            return list;
+            data = dba.spSelectPlots();
+            return data;
         }
-        public void deletePlot(string whatToDelete)
+
+        public void deletePlot(int id)
         {
             DBAccess dba = new DBAccess();
-            dba.DeleteData("spDeletePlots", "@PlotID", whatToDelete);
+            dba.spDeletePlots(id);
+        }
+
+        public void updatePlot(ArrayList list, int id)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spUpdatePlots(list, id);
+        }
+
+        public void insertPlot(ArrayList list)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spInsertPlots(list);
         }
         #endregion
 
@@ -284,36 +291,56 @@ namespace BusinessLogicLayer
         public Plant() { }
 
         #region Methodes
-        public List<Plant> returnAllPlant()
+        public DataTable readPlant()
         {
             DBAccess dba = new DBAccess();
             DataTable data = new DataTable();
-            data = dba.ReadData("spSelectPlant");
-            List<Plant> list = new List<Plant>();
-            foreach (DataRow item in data.Rows)
-            {
-                list.Add(new Plant(
-                    int.Parse(item[""].ToString()),
-                    item[""].ToString(),
-                    item[""].ToString(),
-                    decimal.Parse(item[""].ToString()),
-                    decimal.Parse(item[""].ToString()),
-                    item[""].ToString(),
-                    decimal.Parse(item[""].ToString()),
-                    decimal.Parse(item[""].ToString()),
-                    item[""].ToString(),
-                    decimal.Parse(item[""].ToString()),
-                    decimal.Parse(item[""].ToString()),
-                    decimal.Parse(item[""].ToString()),
-                    decimal.Parse(item[""].ToString())
-                    ));
-            }
-            return list;
+            data = dba.spSelectPlant();
+            return data;
         }
-        public void deletePlant(string whatToDelete)
+
+        public void deletePlant(int id)
         {
             DBAccess dba = new DBAccess();
-            dba.DeleteData("spDeletetPlant", "@PlantID", whatToDelete);
+            dba.spDeletePlant(id);
+        }
+
+        public void updatePlant(ArrayList list, int id)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spUpdatePlant(list, id);
+        }
+
+        public void insertPlant(ArrayList list)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spInserPlant(list);
+        }
+
+        public DataTable readPlantCategory()
+        {
+            DBAccess dba = new DBAccess();
+            DataTable data = new DataTable();
+            data = dba.spSelectPlantCategory();
+            return data;
+        }
+
+        public void deletePlantCategory(int id)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spDeletePlantCategory(id);
+        }
+
+        public void updatePlantCategory(ArrayList list, int id)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spUpdatePlantcategory(list, id);
+        }
+
+        public void insertPlantCategory(ArrayList list)
+        {
+            DBAccess dba = new DBAccess();
+            dba.spInserPlantcategory(list);
         }
         #endregion
 

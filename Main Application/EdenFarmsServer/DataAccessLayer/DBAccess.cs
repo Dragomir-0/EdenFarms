@@ -22,33 +22,33 @@ namespace Data_Access_Layer
 
         //READ METHODS
 
-        public DataTable ReadData(string storedProcedureName) //a method to read any table from the database using a stored procedure
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            DataTable output = new DataTable(); //this will be needed for storing the data from a database table
-            SqlDataAdapter sda = new SqlDataAdapter();
-            try //to prevent a crash if it cannot connect
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(storedProcedureName, conn); //a command is generated using the stored procedude name and the table name
-                cmd.CommandType = CommandType.StoredProcedure; //letting the code know that it is a stored procedude
-                sda.SelectCommand = cmd;
-                sda.FillSchema(output, SchemaType.Source);
-                sda.Fill(output);
-            }
-            catch (SqlException e) //for if an error occurs
-            {
-                MessageBox.Show(e.Message); //this error message will be displayed instead of the application crashing
-            }
-            finally //regardless of a crash or not
-            {
-                if (conn.State == ConnectionState.Open) //if the connection is still open
-                {
-                    conn.Close(); //closes the connection
-                }
-            }
-            return output; //returns the datatable
-        }
+        //public DataTable ReadData(string storedProcedureName) //a method to read any table from the database using a stored procedure
+        //{
+        //    SqlConnection conn = new SqlConnection(connection.ToString());
+        //    DataTable output = new DataTable(); //this will be needed for storing the data from a database table
+        //    SqlDataAdapter sda = new SqlDataAdapter();
+        //    try //to prevent a crash if it cannot connect
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = new SqlCommand(storedProcedureName, conn); //a command is generated using the stored procedude name and the table name
+        //        cmd.CommandType = CommandType.StoredProcedure; //letting the code know that it is a stored procedude
+        //        sda.SelectCommand = cmd;
+        //        sda.FillSchema(output, SchemaType.Source);
+        //        sda.Fill(output);
+        //    }
+        //    catch (SqlException e) //for if an error occurs
+        //    {
+        //        MessageBox.Show(e.Message); //this error message will be displayed instead of the application crashing
+        //    }
+        //    finally //regardless of a crash or not
+        //    {
+        //        if (conn.State == ConnectionState.Open) //if the connection is still open
+        //        {
+        //            conn.Close(); //closes the connection
+        //        }
+        //    }
+        //    return output; //returns the datatable
+        //}
         public DataTable spSelectFarm() 
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
@@ -187,22 +187,22 @@ namespace Data_Access_Layer
 
         //INSERT METHODS
 
-        public void InsertData(string storedProc, string tableName)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
+        //public void InsertData(string storedProc, string tableName)
+        //{
+        //    SqlConnection conn = new SqlConnection(connection.ToString());
+        //    try
+        //    {
 
-            }
-            catch (SqlException e)
-            {
+        //    }
+        //    catch (SqlException e)
+        //    {
 
-            }
-            finally
-            {
+        //    }
+        //    finally
+        //    {
 
-            }
-        }
+        //    }
+        //}
         public void spInsertFarm(ArrayList list)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
@@ -346,22 +346,22 @@ namespace Data_Access_Layer
 
         //UPDATE METHODS
 
-        public void UpdateData(string storedProcName, string tableName)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
+        //public void UpdateData(string storedProcName, string tableName)
+        //{
+        //    SqlConnection conn = new SqlConnection(connection.ToString());
+        //    try
+        //    {
 
-            }
-            catch (SqlException e)
-            {
+        //    }
+        //    catch (SqlException e)
+        //    {
 
-            }
-            finally
-            {
+        //    }
+        //    finally
+        //    {
 
-            }
-        }
+        //    }
+        //}
         public void spUpdateFarm(ArrayList list, int farmid)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
@@ -508,29 +508,29 @@ namespace Data_Access_Layer
 
         //DELETE METHODS
 
-        public void DeleteData(string storedProcedure, string variable, string valueForDeletion)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(storedProcedure, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(variable, valueForDeletion);
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }
+        //public void DeleteData(string storedProcedure, string variable, string valueForDeletion)
+        //{
+        //    SqlConnection conn = new SqlConnection(connection.ToString());
+        //    try
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = new SqlCommand(storedProcedure, conn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue(variable, valueForDeletion);
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //    catch (SqlException e)
+        //    {
+        //        MessageBox.Show(e.Message);
+        //    }
+        //    finally
+        //    {
+        //        if (conn.State == ConnectionState.Open)
+        //        {
+        //            conn.Close();
+        //        }
+        //    }
+        //}
         public void spDeleteFarm(int farmID)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
