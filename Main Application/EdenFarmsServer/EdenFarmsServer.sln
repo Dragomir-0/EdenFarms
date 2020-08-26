@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1082
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdenFarmsServer", "EdenFarmsServer\EdenFarmsServer.csproj", "{0DBAAD0D-7348-421B-A9A9-09C9966A5BCE}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{8CA1DF56-D941-43AE-A046-D63A1EA31D22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{061FFA43-B51C-4E14-97F2-04BD28B99CF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperLib", "HelperLib\HelperLib.csproj", "{CE017DB9-21E4-413A-9786-6CC86498EA72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{061FFA43-B51C-4E14-97F2-04BD28B99CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061FFA43-B51C-4E14-97F2-04BD28B99CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{061FFA43-B51C-4E14-97F2-04BD28B99CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE017DB9-21E4-413A-9786-6CC86498EA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE017DB9-21E4-413A-9786-6CC86498EA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE017DB9-21E4-413A-9786-6CC86498EA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE017DB9-21E4-413A-9786-6CC86498EA72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
