@@ -1,0 +1,41 @@
+﻿<Window x:Class="EdenFarmsUI.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EdenFarmsUI"
+        mc:Ignorable="d"
+        Title="MainPage" Height="450" Width="800">
+    <StackPanel Background="#555555">
+    <Grid>
+        <StackPanel>
+            <Button Content="Logout" Margin="10,10,660,0" />
+        </StackPanel>
+    </Grid>
+        <Grid Margin="60 100" Background="#999999">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Clients" FontWeight="Bold" FontSize="25"/>
+            <Button Content="Add" Grid.Column="1"/>
+            <Button Content="Update" Grid.Column="2"/>
+            <Button Content="Delete" Grid.Column="3"/>
+        </Grid>
+
+        <Grid Margin="60 10" Background="#999999">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Client Plots" FontWeight="Bold" FontSize="25"/>
+            <Button Content="Add" Grid.Column="1"/>
+            <Button Content="Update" Grid.Column="2"/>
+            <Button Content="Delete" Grid.Column="3"/>
+        </Grid>
+    </StackPanel>
+</Window>
