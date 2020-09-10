@@ -10,7 +10,7 @@ using DataAccessLayer;
 
 namespace BusinessLogicLayer
 {
-    class User
+    public class User
     {
         #region Fields
         private int userID;
@@ -39,6 +39,16 @@ namespace BusinessLogicLayer
             this.Emailaddress = emailaddressPrm;
             this.UserAddress = userAddressPrm;
         }
+
+        public User(string usernamePrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
+        {
+            this.Username = usernamePrm;
+            this.VatIDNumber = vatIDNumberPrm;
+            this.ContactNumber = contactNumberPrm;
+            this.Emailaddress = emailaddressPrm;
+            this.UserAddress = userAddressPrm;
+        }
+        //does not include ID
 
         public User() { }
 
@@ -88,7 +98,7 @@ namespace BusinessLogicLayer
 
         #endregion
     }
-    class Farm
+    public class Farm
     {
         #region Fields
         private int farmID;
@@ -112,6 +122,14 @@ namespace BusinessLogicLayer
             this.FarmLocation = farmLocationPrm;
             this.LocationAlias = locationAliasPrm;
         }
+
+        public Farm(string farmNamePrm, string farmLocationPrm, string locationAliasPrm)
+        {
+            this.FarmName = farmNamePrm;
+            this.FarmLocation = farmLocationPrm;
+            this.LocationAlias = locationAliasPrm;
+        }
+        //does not include ID
 
         public Farm() { }
 
@@ -161,7 +179,7 @@ namespace BusinessLogicLayer
 
         #endregion
     }
-    class Plot  // {Concept}
+    public class Plot  // {Concept}
     {
         #region Fields
         private int plotID;
@@ -236,7 +254,7 @@ namespace BusinessLogicLayer
 
         #endregion
     }
-    class Plant
+    public class Plant
     {
         #region Fields
         private int plantID;
@@ -287,6 +305,24 @@ namespace BusinessLogicLayer
             this.OptimalPhosphorus = optPhos;
             this.OptimalPotassium = optPotass;
         }
+        //the main plant constructor
+
+        public Plant(string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optIntOxy, decimal optNit, decimal optPhos, decimal optPotass)
+        {
+            this.PlantCategory = plantCategoryPrm;
+            this.PlantName = nm;
+            this.OptimalAmbientTemp = optAmbTemp;
+            this.OptimalAmbientHumidity = optAmbHum;
+            this.OptimalAmbientLight = optAmbLight;
+            this.OptimalInternalTemp = optIntTemp;
+            this.OptimalInternalHumidity = optIntHum;
+            this.OptimalInternalLight = optIntLight;
+            this.OptimalInternalOxygen = optIntOxy;
+            this.OptimalNitrogen = optNit;
+            this.OptimalPhosphorus = optPhos;
+            this.OptimalPotassium = optPotass;
+        }
+        //for inserting. This constructor does not include the PlantID, as these are automatically assigned by the DB
 
         public Plant() { }
 
@@ -305,16 +341,16 @@ namespace BusinessLogicLayer
             dba.spDeletePlant(id);
         }
 
-        public void updatePlant(ArrayList list, int id)
+        public void updatePlant(string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optIntOxy, decimal optNit, decimal optPhos, decimal optPotass, int id)
         {
             DBAccess dba = new DBAccess();
-            dba.spUpdatePlant(list, id);
+            dba.spUpdatePlant(plantCategoryPrm, nm, optAmbTemp, optAmbHum, optAmbLight, optIntTemp, optIntHum, optIntLight, optIntOxy, optNit, optPhos, optPotass, id);
         }
 
-        public void insertPlant(ArrayList list)
+        public void insertPlant(string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optIntOxy, decimal optNit, decimal optPhos, decimal optPotass)
         {
             DBAccess dba = new DBAccess();
-            dba.spInserPlant(list);
+            dba.spInserPlant(plantCategoryPrm, nm, optAmbTemp, optAmbHum, optAmbLight, optIntTemp, optIntHum, optIntLight, optIntOxy, optNit, optPhos, optPotass);
         }
 
         public DataTable readPlantCategory()

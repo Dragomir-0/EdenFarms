@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.output = new System.Windows.Forms.DataGridView();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.output)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // output
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(775, 333);
-            this.dataGridView1.TabIndex = 0;
+            this.output.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.output.Location = new System.Drawing.Point(12, 42);
+            this.output.Name = "output";
+            this.output.Size = new System.Drawing.Size(775, 333);
+            this.output.TabIndex = 0;
             // 
             // btnLogout
             // 
@@ -106,17 +106,17 @@
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.output);
             this.Name = "ScientificForm";
             this.Text = "ScientificForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.output)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView output;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnView;

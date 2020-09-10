@@ -23,5 +23,10 @@ namespace PresentationLayer
             cf.Show();
             this.Hide();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

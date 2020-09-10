@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogicLayer;
 
 namespace PresentationLayer
 {
@@ -26,7 +27,12 @@ namespace PresentationLayer
 
         private void btnView_Click(object sender, EventArgs e)
         {
-
+            Plant pl = new Plant();
+            DataTable dt = new DataTable();
+            dt = pl.readPlant();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dt;
+            output.DataSource = bs;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

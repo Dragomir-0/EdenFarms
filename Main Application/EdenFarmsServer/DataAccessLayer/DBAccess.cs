@@ -230,7 +230,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spInserPlant(ArrayList list)
+        public void spInserPlant(string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optIntOxy, decimal optNit, decimal optPhos, decimal optPotass)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -238,18 +238,18 @@ namespace Data_Access_Layer
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("spInserPlant", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@PlantCategoryID", list[0]);
-                cmd.Parameters.AddWithValue("@PlantName", list[1]);
-                cmd.Parameters.AddWithValue("@OptimalAmbientTemp", list[2]);
-                cmd.Parameters.AddWithValue("@OptimalAmbientHumidity", list[3]);
-                cmd.Parameters.AddWithValue("@OptimalAmbientLight", list[4]);
-                cmd.Parameters.AddWithValue("@OptimalInternalTemp", list[5]);
-                cmd.Parameters.AddWithValue("@OptimalInternalHumidity", list[6]);
-                cmd.Parameters.AddWithValue("@OptimalInternalLight", list[7]);
-                cmd.Parameters.AddWithValue("@OptimalInternalOxygen", list[8]);
-                cmd.Parameters.AddWithValue("@OptimalNitrogen", list[9]);
-                cmd.Parameters.AddWithValue("@OptimalPhosphorus", list[10]);
-                cmd.Parameters.AddWithValue("@OptimalPotassium", list[11]);
+                cmd.Parameters.AddWithValue("@PlantCategoryID", plantCategoryPrm);
+                cmd.Parameters.AddWithValue("@PlantName", nm);
+                cmd.Parameters.AddWithValue("@OptimalAmbientTemp", optAmbTemp);
+                cmd.Parameters.AddWithValue("@OptimalAmbientHumidity", optAmbHum);
+                cmd.Parameters.AddWithValue("@OptimalAmbientLight", optAmbLight);
+                cmd.Parameters.AddWithValue("@OptimalInternalTemp", optIntTemp);
+                cmd.Parameters.AddWithValue("@OptimalInternalHumidity", optIntHum);
+                cmd.Parameters.AddWithValue("@OptimalInternalLight", optIntLight);
+                cmd.Parameters.AddWithValue("@OptimalInternalOxygen", optIntOxy);
+                cmd.Parameters.AddWithValue("@OptimalNitrogen", optNit);
+                cmd.Parameters.AddWithValue("@OptimalPhosphorus", optPhos);
+                cmd.Parameters.AddWithValue("@OptimalPotassium", optPotass);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException e)
@@ -389,7 +389,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spUpdatePlant(ArrayList list, int plantid)
+        public void spUpdatePlant(string plantCategoryPrm, string nm, decimal optAmbTemp, decimal optAmbHum, string optAmbLight, decimal optIntTemp, decimal optIntHum, string optIntLight, decimal optIntOxy, decimal optNit, decimal optPhos, decimal optPotass, int plantid)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -398,18 +398,18 @@ namespace Data_Access_Layer
                 SqlCommand cmd = new SqlCommand("spUpdatePlant", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PlantID", plantid);
-                cmd.Parameters.AddWithValue("@PlantCategoryID", list[0]);
-                cmd.Parameters.AddWithValue("@PlantName", list[1]);
-                cmd.Parameters.AddWithValue("@OptimalAmbientTemp", list[2]);
-                cmd.Parameters.AddWithValue("@OptimalAmbientHumidity", list[3]);
-                cmd.Parameters.AddWithValue("@OptimalAmbientLight", list[4]);
-                cmd.Parameters.AddWithValue("@OptimalInternalTemp", list[5]);
-                cmd.Parameters.AddWithValue("@OptimalInternalHumidity", list[6]);
-                cmd.Parameters.AddWithValue("@OptimalInternalLight", list[7]);
-                cmd.Parameters.AddWithValue("@OptimalInternalOxygen", list[8]);
-                cmd.Parameters.AddWithValue("@OptimalNitrogen", list[9]);
-                cmd.Parameters.AddWithValue("@OptimalPhosphorus", list[10]);
-                cmd.Parameters.AddWithValue("@OptimalPotassium", list[11]);
+                cmd.Parameters.AddWithValue("@PlantCategoryID", plantCategoryPrm);
+                cmd.Parameters.AddWithValue("@PlantName", nm);
+                cmd.Parameters.AddWithValue("@OptimalAmbientTemp", optAmbTemp);
+                cmd.Parameters.AddWithValue("@OptimalAmbientHumidity", optAmbHum);
+                cmd.Parameters.AddWithValue("@OptimalAmbientLight", optAmbLight);
+                cmd.Parameters.AddWithValue("@OptimalInternalTemp", optIntTemp);
+                cmd.Parameters.AddWithValue("@OptimalInternalHumidity", optIntHum);
+                cmd.Parameters.AddWithValue("@OptimalInternalLight", optIntLight);
+                cmd.Parameters.AddWithValue("@OptimalInternalOxygen", optIntOxy);
+                cmd.Parameters.AddWithValue("@OptimalNitrogen", optNit);
+                cmd.Parameters.AddWithValue("@OptimalPhosphorus", optPhos);
+                cmd.Parameters.AddWithValue("@OptimalPotassium", optPotass);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException e)
