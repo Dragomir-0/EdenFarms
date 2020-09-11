@@ -50,6 +50,7 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add Plot";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 

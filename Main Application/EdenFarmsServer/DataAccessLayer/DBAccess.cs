@@ -289,7 +289,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spInsertPlots(ArrayList list)
+        public void spInsertPlots(int farmIDPrm, int plant, string user, string performance)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -297,10 +297,10 @@ namespace Data_Access_Layer
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("spInsertPlots", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@FarmID", list[0]);
-                cmd.Parameters.AddWithValue("@PlantID", list[1]);
-                cmd.Parameters.AddWithValue("@UserOverride", list[2]);
-                cmd.Parameters.AddWithValue("@PerformanceReview", list[3]);
+                cmd.Parameters.AddWithValue("@FarmID", farmIDPrm);
+                cmd.Parameters.AddWithValue("@PlantID", plant);
+                cmd.Parameters.AddWithValue("@UserOverride", user);
+                cmd.Parameters.AddWithValue("@PerformanceReview", performance);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException e)
@@ -315,7 +315,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spInserThetUsers(ArrayList list)
+        public void spInserThetUsers(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -323,12 +323,12 @@ namespace Data_Access_Layer
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("spInserThetUsers", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@UserName", list[0]);
-                cmd.Parameters.AddWithValue("@UserPassword", list[1]);
-                cmd.Parameters.AddWithValue("@VatIDNumber", list[2]);
-                cmd.Parameters.AddWithValue("@ContactNumber", list[3]);
-                cmd.Parameters.AddWithValue("@Email", list[4]);
-                cmd.Parameters.AddWithValue("@Address", list[5]);
+                cmd.Parameters.AddWithValue("@UserName", usernamePrm);
+                cmd.Parameters.AddWithValue("@UserPassword", passwordPrm);
+                cmd.Parameters.AddWithValue("@VatIDNumber", vatIDNumberPrm);
+                cmd.Parameters.AddWithValue("@ContactNumber", contactNumberPrm);
+                cmd.Parameters.AddWithValue("@Email", emailaddressPrm);
+                cmd.Parameters.AddWithValue("@Address", userAddressPrm);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException e)
@@ -449,7 +449,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spUpdatePlots(ArrayList list, int plotid)
+        public void spUpdatePlots(int farmIDPrm, int plant, string user, string performance, int plotid)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -458,10 +458,10 @@ namespace Data_Access_Layer
                 SqlCommand cmd = new SqlCommand("spUpdatePlots", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PlotID", plotid);
-                cmd.Parameters.AddWithValue("@FarmID", list[0]);
-                cmd.Parameters.AddWithValue("@PlantID", list[1]);
-                cmd.Parameters.AddWithValue("@UserOverride", list[2]);
-                cmd.Parameters.AddWithValue("@PerformanceReview", list[3]);
+                cmd.Parameters.AddWithValue("@FarmID", farmIDPrm);
+                cmd.Parameters.AddWithValue("@PlantID", plant);
+                cmd.Parameters.AddWithValue("@UserOverride", user);
+                cmd.Parameters.AddWithValue("@PerformanceReview", performance);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException e)
@@ -476,7 +476,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spUpdateUsers(ArrayList list, int userid)
+        public void spUpdateUsers(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm, int userid)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -485,12 +485,12 @@ namespace Data_Access_Layer
                 SqlCommand cmd = new SqlCommand("spUpdateUsers", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@userID", userid);
-                cmd.Parameters.AddWithValue("@UserName", list[0]);
-                cmd.Parameters.AddWithValue("@UserPassword", list[1]);
-                cmd.Parameters.AddWithValue("@VatIDNumber", list[2]);
-                cmd.Parameters.AddWithValue("@ContactNumber", list[3]);
-                cmd.Parameters.AddWithValue("@Email", list[4]);
-                cmd.Parameters.AddWithValue("@Address", list[5]);
+                cmd.Parameters.AddWithValue("@UserName", usernamePrm);
+                cmd.Parameters.AddWithValue("@UserPassword", passwordPrm);
+                cmd.Parameters.AddWithValue("@VatIDNumber", vatIDNumberPrm);
+                cmd.Parameters.AddWithValue("@ContactNumber", contactNumberPrm);
+                cmd.Parameters.AddWithValue("@Email", emailaddressPrm);
+                cmd.Parameters.AddWithValue("@Address", userAddressPrm);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException e)

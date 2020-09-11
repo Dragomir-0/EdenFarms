@@ -30,7 +30,7 @@ namespace BusinessLogicLayer
         public string UserAddress { get => userAddress; set => userAddress = value; }
         #endregion
 
-        public User(int userIDPrm, string usernamePrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
+        public User(int userIDPrm, string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
         {
             this.UserID = userIDPrm;
             this.Username = usernamePrm;
@@ -40,7 +40,7 @@ namespace BusinessLogicLayer
             this.UserAddress = userAddressPrm;
         }
 
-        public User(string usernamePrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
+        public User(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
         {
             this.Username = usernamePrm;
             this.VatIDNumber = vatIDNumberPrm;
@@ -67,16 +67,16 @@ namespace BusinessLogicLayer
             dba.spDeleteUsers(id);
         }
 
-        public void updateUser(ArrayList list, int id)
+        public void updateUser(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm, int userid)
         {
             DBAccess dba = new DBAccess();
-            dba.spUpdateUsers(list, id);
+            dba.spUpdateUsers(usernamePrm, passwordPrm, vatIDNumberPrm, contactNumberPrm, emailaddressPrm, userAddressPrm, userid);
         }
 
-        public void insertUser(ArrayList list)
+        public void insertUser(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
         {
             DBAccess dba = new DBAccess();
-            dba.spInserThetUsers(list);
+            dba.spInserThetUsers(usernamePrm, passwordPrm, vatIDNumberPrm, contactNumberPrm, emailaddressPrm, userAddressPrm);
         }
         #endregion
 
@@ -206,6 +206,15 @@ namespace BusinessLogicLayer
             this.PerformanceReview = performance;
         }
 
+        public Plot(int farmIDPrm, int plant, string user, string performance)
+        {
+            this.FarmID = farmIDPrm;
+            this.PlantID = plant;
+            this.UserOverride = user;
+            this.PerformanceReview = performance;
+        }
+        //without plot ID
+
         public Plot() { }
 
         #region Methodes
@@ -223,16 +232,16 @@ namespace BusinessLogicLayer
             dba.spDeletePlots(id);
         }
 
-        public void updatePlot(ArrayList list, int id)
+        public void updatePlot(int farmIDPrm, int plant, string user, string performance, int id)
         {
             DBAccess dba = new DBAccess();
-            dba.spUpdatePlots(list, id);
+            dba.spUpdatePlots(farmIDPrm, plant, user, performance, id);
         }
 
-        public void insertPlot(ArrayList list)
+        public void insertPlot(int farmIDPrm, int plant, string user, string performance)
         {
             DBAccess dba = new DBAccess();
-            dba.spInsertPlots(list);
+            dba.spInsertPlots(farmIDPrm, plant, user, performance);
         }
         #endregion
 
