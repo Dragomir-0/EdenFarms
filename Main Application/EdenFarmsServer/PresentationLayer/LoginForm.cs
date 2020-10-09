@@ -56,21 +56,21 @@ namespace PresentationLayer
 
         private void btnScientific_Click(object sender, EventArgs e)
         {
-            ScientificForm sf = new ScientificForm();
+            ScientificForm sf = new ScientificForm(0,0,0);
             sf.Show();
             this.Hide();
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            ClientForm cf = new ClientForm();
+            ClientForm cf = new ClientForm(0,0,0);
             cf.Show();
             this.Hide();
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            TechnicalForm tf = new TechnicalForm();
+            TechnicalForm tf = new TechnicalForm(0,0,0);
             tf.Show();
             this.Hide();
         }

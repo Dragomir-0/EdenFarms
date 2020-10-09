@@ -27,5 +27,12 @@ namespace PresentationLayer
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            TechnicalForm tf = new TechnicalForm(userid, farmid, plotid);
+            tf.Show();
+            this.Hide();
+        }
     }
 }
