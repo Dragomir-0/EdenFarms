@@ -109,6 +109,7 @@
             this.Controls.Add(this.output);
             this.Name = "ScientificForm";
             this.Text = "ScientificForm";
+            this.Load += new System.EventHandler(this.ScientificForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.output)).EndInit();
             this.ResumeLayout(false);
 

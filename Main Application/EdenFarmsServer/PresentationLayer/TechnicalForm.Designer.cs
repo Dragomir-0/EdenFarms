@@ -86,6 +86,7 @@
             this.Controls.Add(this.btnLogout);
             this.Name = "TechnicalForm";
             this.Text = "TechnicalForm";
+            this.Load += new System.EventHandler(this.TechnicalForm_Load);
             this.ResumeLayout(false);
 
         }

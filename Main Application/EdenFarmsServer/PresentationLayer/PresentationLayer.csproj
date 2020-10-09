@@ -150,6 +150,15 @@
     <EmbeddedResource Include="AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteClientForm.resx">
+      <DependentUpon>DeleteClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletePlotForm.resx">
+      <DependentUpon>DeletePlotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteStaffForm.resx">
+      <DependentUpon>DeleteStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditValuesForm.resx">
       <DependentUpon>EditValuesForm.cs</DependentUpon>
     </EmbeddedResource>

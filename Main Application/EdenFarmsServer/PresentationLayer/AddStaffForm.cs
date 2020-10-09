@@ -12,9 +12,20 @@ namespace PresentationLayer
 {
     public partial class AddStaffForm : Form
     {
-        public AddStaffForm()
+        public int userid;
+        public int farmid;
+        public int plotid;
+        public AddStaffForm(int userid, int farmid, int plotid)
         {
             InitializeComponent();
+            this.userid = userid;
+            this.farmid = farmid;
+            this.plotid = plotid;
+        }
+
+        private void AddStaffForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

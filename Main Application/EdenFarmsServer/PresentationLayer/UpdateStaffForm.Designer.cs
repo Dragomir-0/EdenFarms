@@ -38,6 +38,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "UpdateStaffForm";
             this.Text = "UpdateStaffForm";
+            this.Load += new System.EventHandler(this.UpdateStaffForm_Load);
             this.ResumeLayout(false);
 
         }

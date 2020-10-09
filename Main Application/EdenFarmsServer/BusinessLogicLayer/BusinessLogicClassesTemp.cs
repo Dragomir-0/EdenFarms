@@ -78,6 +78,51 @@ namespace BusinessLogicLayer
             DBAccess dba = new DBAccess();
             dba.spInserThetUsers(usernamePrm, passwordPrm, vatIDNumberPrm, contactNumberPrm, emailaddressPrm, userAddressPrm);
         }
+
+        public bool LoginCheck(string user, string pass)
+        {
+            DBAccess dba = new DBAccess();
+            DataTable data = dba.getLoginDetails();
+            bool allGood = false;
+            foreach (DataRow item in data.Rows)
+            {
+                if (item["UserName"].ToString() == user)
+                {
+                    if (item["UserPassword"].ToString() == pass)
+                    {
+                        allGood = true;
+                    }
+                    else
+                    {
+                        allGood = false;
+                    }
+                }
+                else
+                {
+                    allGood = false;
+                }
+            }
+            return allGood;
+        }
+
+        public DataTable returnDetails(string user, string pass)
+        {
+            DBAccess dba = new DBAccess();
+            DataTable data = dba.getLoginDetails();
+            DataTable output = new DataTable();
+            foreach (DataRow item in data.Rows)
+            {
+                if (item["UserName"].ToString() == user)
+                {
+                    if (item["UserPassword"].ToString() == pass)
+                    {
+                        output.ImportRow(item);
+                    }
+                }
+            }
+            return output;
+        }
+
         #endregion
 
         #region Overrrides

@@ -13,14 +13,20 @@ namespace PresentationLayer
 {
     public partial class AddPlotForm : Form
     {
-        public AddPlotForm()
+        public int userid;
+        public int farmid;
+        public int plotid;
+        public AddPlotForm(int userid, int farmid, int plotid)
         {
             InitializeComponent();
+            this.userid = userid;
+            this.farmid = farmid;
+            this.plotid = plotid;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ClientForm cf = new ClientForm();
+            ClientForm cf = new ClientForm(userid, farmid, plotid);
             cf.Show();
             this.Hide();
         }

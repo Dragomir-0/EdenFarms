@@ -12,9 +12,20 @@ namespace PresentationLayer
 {
     public partial class DeletePlotForm : Form
     {
-        public DeletePlotForm()
+        public int userid;
+        public int farmid;
+        public int plotid;
+        public DeletePlotForm(int userid, int farmid, int plotid)
         {
             InitializeComponent();
+            this.userid = userid;
+            this.farmid = farmid;
+            this.plotid = plotid;
+        }
+
+        private void DeletePlotForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

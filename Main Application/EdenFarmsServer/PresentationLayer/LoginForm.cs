@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogicLayer;
 
 namespace PresentationLayer
 {
@@ -19,6 +20,37 @@ namespace PresentationLayer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            User user = new User();
+            DataTable details = new DataTable();
+            if (user.LoginCheck(username, password))
+            {
+                details = user.returnDetails(username, password);
+                foreach (DataRow item in details.Rows)
+                {
+                    if (int.Parse(item["RoleID"].ToString()) == 0)
+                    {
+
+                    }
+                    else if (int.Parse(item["RoleID"].ToString()) == 1)
+                    {
+
+                    }
+                    else if (int.Parse(item["RoleID"].ToString()) == 2)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid role. Contact support");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Login credentials are incorrect");
+            }
 
         }
 
