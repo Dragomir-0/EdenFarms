@@ -41,10 +41,10 @@ namespace PresentationLayer
             string contact = txtContactNumber.Text;
             string email = txtEmail.Text;
             string address = txtAddress.Text;
-            int userid = 0;
+            int theuserid = userid;
             if (password == confirm)
             {
-                us.updateUser(username, password, vatID, contact, email, address, userid);
+                us.updateUser(username, password, vatID, contact, email, address, theuserid);
             }
             else
             {
