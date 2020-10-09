@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace Data_Access_Layer
 {
+    //Data Source=DESKTOP-U0KREVI\SQLEXPRESS;Initial Catalog=EdenFarmsDB;Integrated Security=True
     public class DBAccess
     {
         SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
         public DBAccess()
         {
-            connection.DataSource = ""; //the data source of the connection
-            connection.InitialCatalog = ""; //the inital catalog of the connection
+            connection.DataSource = @"DESKTOP-U0KREVI\SQLEXPRESS"; //the data source of the connection
+            connection.InitialCatalog = @"EdenFarmsDB"; //the inital catalog of the connection
             connection.IntegratedSecurity = true; //the integrated security of the connection
         }
 
