@@ -85,8 +85,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spSelectPlant", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand("SELECT * FROM tblPlant", conn);
                 sda.SelectCommand = cmd;
                 sda.FillSchema(output, SchemaType.Source);
                 sda.Fill(output);
