@@ -498,7 +498,7 @@ END
 
 GO
 
-CREATE PROCEDURE UpdatePlantCategory
+CREATE PROCEDURE spUpdatePlantCategory
 (
 @PlantCategoryID INT,
 @CategoryName VARCHAR(40) ,
@@ -526,7 +526,7 @@ END
 
 GO
 
-CREATE PROCEDURE UpdatePlantCategoryName
+CREATE PROCEDURE spUpdatePlantCategoryName
 (
 @PlantCategoryID INT,
 @CategoryName VARCHAR(40)
@@ -552,7 +552,7 @@ END
 
 GO
 
-CREATE PROCEDURE UpdatePlantCategoryDescription
+CREATE PROCEDURE spUpdatePlantCategoryDescription
 (
 @PlantCategoryID INT,
 @CategoryDescription VARCHAR(80)
