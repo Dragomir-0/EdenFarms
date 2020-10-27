@@ -1,7 +1,7 @@
 CREATE DATABASE EdenFarmsDB
 ON PRIMARY
 (
-NAME= BCLibraryDBData,
+NAME= EdenFarmsDBData,
 FILENAME= '%Documents%\EdenFarmsDB\EdenFarmsDBData.mdf',
 SIZE= 20MB,
 FILEGROWTH= 10%,
@@ -9,7 +9,7 @@ MAXSIZE= 10GB
 )
 LOG ON
 (
-NAME= BCLibraryDBLogs,
+NAME= EdenFarmsDBLogs,
 FILENAME= '%Documents%\EdenFarmsDB\EdenFarmsDBLogs.ldf',
 SIZE= 20MB,
 FILEGROWTH= 10%,
