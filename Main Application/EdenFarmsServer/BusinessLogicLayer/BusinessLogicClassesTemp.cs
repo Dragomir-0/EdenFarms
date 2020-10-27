@@ -53,11 +53,11 @@ namespace BusinessLogicLayer
         public User() { }
 
         #region Methodes
-        public DataTable readUser()
+        public DataTable readUser(int id)
         {
             DBAccess dba = new DBAccess();
             DataTable data = new DataTable();
-            data = dba.spSelectUsers();
+            data = dba.spSelectUsers(id);
             return data;
         }
 
@@ -263,11 +263,11 @@ namespace BusinessLogicLayer
         public Plot() { }
 
         #region Methodes
-        public DataTable readPlot()
+        public DataTable readPlot(int id)
         {
             DBAccess dba = new DBAccess();
             DataTable data = new DataTable();
-            data = dba.spSelectPlots();
+            data = dba.spSelectPlots(id);
             return data;
         }
 

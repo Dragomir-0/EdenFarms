@@ -130,7 +130,7 @@ namespace Data_Access_Layer
             }
             return output;
         }
-        public DataTable spSelectPlots()
+        public DataTable spSelectPlots(int id)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             DataTable output = new DataTable();
@@ -138,8 +138,9 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spSelectPlots", conn);
+                SqlCommand cmd = new SqlCommand("spListPlotDetails", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
                 sda.SelectCommand = cmd;
                 sda.FillSchema(output, SchemaType.Source);
                 sda.Fill(output);
@@ -157,7 +158,7 @@ namespace Data_Access_Layer
             }
             return output;
         }
-        public DataTable spSelectUsers()
+        public DataTable spSelectUsers(int id)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             DataTable output = new DataTable();
@@ -165,8 +166,9 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spSelectUsers", conn);
+                SqlCommand cmd = new SqlCommand("spListUserIDDetails", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
                 sda.SelectCommand = cmd;
                 sda.FillSchema(output, SchemaType.Source);
                 sda.Fill(output);
@@ -236,7 +238,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spInserPlant", conn);
+                SqlCommand cmd = new SqlCommand("spInsertPlant", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PlantCategoryID", plantCategoryPrm);
                 cmd.Parameters.AddWithValue("@PlantName", nm);
@@ -295,7 +297,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spInsertPlots", conn);
+                SqlCommand cmd = new SqlCommand("spInsertPlot", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@FarmID", farmIDPrm);
                 cmd.Parameters.AddWithValue("@PlantID", plant);
@@ -321,7 +323,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spInserThetUsers", conn);
+                SqlCommand cmd = new SqlCommand("spInsertUser", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@UserName", usernamePrm);
                 cmd.Parameters.AddWithValue("@UserPassword", passwordPrm);
@@ -455,7 +457,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spUpdatePlots", conn);
+                SqlCommand cmd = new SqlCommand("spUpdatePlot", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PlotID", plotid);
                 cmd.Parameters.AddWithValue("@FarmID", farmIDPrm);
@@ -482,7 +484,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spUpdateUsers", conn);
+                SqlCommand cmd = new SqlCommand("spUpdateUser", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@userID", userid);
                 cmd.Parameters.AddWithValue("@UserName", usernamePrm);
