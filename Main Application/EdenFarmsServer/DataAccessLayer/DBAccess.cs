@@ -478,7 +478,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spUpdateUsers(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm, int userid)
+        public void spUpdateUsers(int roleid, string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm, int userid)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -487,6 +487,7 @@ namespace Data_Access_Layer
                 SqlCommand cmd = new SqlCommand("spUpdateUser", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@userID", userid);
+                cmd.Parameters.AddWithValue("@RoleID", roleid);
                 cmd.Parameters.AddWithValue("@UserName", usernamePrm);
                 cmd.Parameters.AddWithValue("@UserPassword", passwordPrm);
                 cmd.Parameters.AddWithValue("@VatIDNumber", vatIDNumberPrm);
@@ -585,7 +586,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("spDeletePlots", conn);
+                SqlCommand cmd = new SqlCommand("spDeletePlot", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PlotID", plotID);
                 cmd.ExecuteNonQuery();
@@ -633,7 +634,7 @@ namespace Data_Access_Layer
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("spDeleteUsers", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@USERID", USERID);
+                cmd.Parameters.AddWithValue("@UserID", USERID);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException e)
