@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>WELCOME TO EDEN FARMS.</title>
+        <meta charset="UTF-8">
+        <link href="./CSS/EdenfarmsCSS.css" rel="stylesheet" type="text/css"/>
+        <link href="./CSS/weather.css" rel="stylesheet" type="text/css"/>
+        <script src="./Javascript/weather.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <div class="background">
+  <div class="navbar">
+    <ul>
+      <li><a href="#Farms" class="scroll">Farms</a></li>
+      <li><a href="#Plots" class="scroll">Today's weather</a></li>
+      <li><a href="#cu" class="scroll">Contact us.</a></li>
+      <li><a href="Plots page.html" class="scroll">Plots.</a></li>
+      <li><a href="User Account.html" class="scroll">User account.</a></li>
+    </ul>
+  </div>
+  <div class="inside-background" id="Farms">
+    <div class="inside">
+        
+        <h1 class="text-size">Eden Farms</h1>
+
+        <p>Welcome come to your very own control center! Where you will be able to monitor and edit the specific items to ensure the plants on your plots is growing to their fullest potential. Eden farms gives you the opportunity to edit the temperature and many more functions, so that you can make sure your plant species can grow fast and healthy to the specifications you have set for them. Eden farms has a in built system which already have a set of specific parameters for the plants which the you can view and leave it as it is or enter your own parameters. </p>
+        <% farms.forEach((farm,i)=>{ %>
+          <figure class="snip1515" style="float: left">
+            <div class="profile-image"><img src=../Media/f<%= i %>.jpg alt="Farm 1" /></div>
+                <figcaption>
+                    <a href="#Plots" class="FarmLink"><h3>Farm 1</h3></a>
+                    <h3><%= farm.FarmName %></h3>
+                    <h4>Owner: <%= user.UserName %></h4>
+                    <h4>Location: <%= farm.FarmLocation %></h4>
+                    <h4>Location Alias: <%= farm.LocationAlias %></h4>
+                </figcaption>
+          </figure>
+        <% }) %>
+      </div>
+  </div>
+</div>
+        
+        
+<div class="text-section" id="weather">
+  <h1 class="font-size">Weather</h1>
+  <div class="container">
+    <div class="title">
+      <h1 id="city"></h1>
+      <div id="graphic" class="weather-icon"></div>
+      <div id="description" class='important-info text'></div>
+      <div id="farenheit" class="temp-info"></div>
+      <div id="celsius" class="temp-info"></div>
+    </div>
+  </div>
+  <div class="description-container">
+    <div class="block-1">
+      <div class="text">
+        <span>Max</span>
+        <span id="max" class="important-info"> </span>
+      </div>
+      <div class="text">
+        <span>Min</span>
+      <span id="min" class='important-info'> </span>
+      </div>
+  
+    </div>
+    <div class="block-2">
+      <div id="longitude" class=" text important-info">Lon: </div>
+      <div id="latitude" class="text important-info">Lat: </div>
+    </div>
+    <div class="block-3">
+      <div id="humidity" class="text important-info">Humidity: </div>
+      <div id="pressure" class="text important-info">Pressure: </div>
+      <div id="windSpeed" class="text important-info">Winds: </div>
+    </div>
+  </div>
+  
+  <div class="container-button">
+        <div class="switch-button">
+          <span class="active"></span>
+          <button class="text switch-button-case left active-case">Celsius</button>
+          <button class="text switch-button-case right">Farenheit</button>
+        </div>
+  </div>
+  </div>
+<div class="website-section" id="cu">
+  <h1 class="font-size">Contact us.</h1>
+  <div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form1">
+      
+      <p class="name">
+        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+      </p>
+      
+      <p class="email">
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+      </p>
+      
+      <p class="text">
+        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+      </p>
+      
+      
+      <div class="submit">
+        <input type="submit" value="SEND" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+    </body>
+</html>
