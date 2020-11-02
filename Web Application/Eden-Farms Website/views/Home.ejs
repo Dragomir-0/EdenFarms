@@ -8,8 +8,8 @@ and open the template in the editor.
     <head>
         <title>WELCOME TO EDEN FARMS.</title>
         <meta charset="UTF-8">
-        <link href="./CSS/EdenfarmsCSS.css" rel="stylesheet" type="text/css"/>
-        <link href="./CSS/weather.css" rel="stylesheet" type="text/css"/>
+        <link href="/CSS/EdenfarmsCSS.css" rel="stylesheet" type="text/css"/>
+        <link href="/CSS/weather.css" rel="stylesheet" type="text/css"/>
         <script src="./Javascript/weather.js" type="text/javascript"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -32,10 +32,9 @@ and open the template in the editor.
         <p>Welcome come to your very own control center! Where you will be able to monitor and edit the specific items to ensure the plants on your plots is growing to their fullest potential. Eden farms gives you the opportunity to edit the temperature and many more functions, so that you can make sure your plant species can grow fast and healthy to the specifications you have set for them. Eden farms has a in built system which already have a set of specific parameters for the plants which the you can view and leave it as it is or enter your own parameters. </p>
         <% farms.forEach((farm,i)=>{ %>
           <figure class="snip1515" style="float: left">
-            <div class="profile-image"><img src=../Media/f<%= i %>.jpg alt="Farm 1" /></div>
+            <div class="profile-image"><img src=/Media/f0.jpg alt="Farm 1" /></div>
                 <figcaption>
-                    <a href="#Plots" class="FarmLink"><h3>Farm 1</h3></a>
-                    <h3><%= farm.FarmName %></h3>
+                    <a href="\Plots" class="FarmLink"><h3 name="selectedFarm"><%= farm.FarmName %></h3></a>
                     <h4>Owner: <%= user.UserName %></h4>
                     <h4>Location: <%= farm.FarmLocation %></h4>
                     <h4>Location Alias: <%= farm.LocationAlias %></h4>

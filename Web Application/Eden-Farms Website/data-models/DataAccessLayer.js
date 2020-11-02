@@ -58,23 +58,25 @@ const config = {
 // })
 
 module.exports = {
-    user : {},
-    farmsData : [],
-    plotsData : [],
-    plantsData : [],
-    plantCategoriesData : [],
-    CurrentUser: (loggedUser)=>{this.user = loggedUser; console.log(this.user.UserID)},
+    // user : {},
+    // farmsData : [],
+    // plotsData : [],
+    // plantsData : [],
+    // plantCategoriesData : [],
+    CurrentUser: (loggedUser)=>{this.user = loggedUser;},
     getFarmData: (userid) =>{
         sql.connect(config, (err)=>{
             if(err) console.log(err);
             var request = new sql.Request();
         
-            request.query(request.template`select * from tblFarm WHERE UserID = ${this.user.UserID}`, (err, ress) => {
+            request.query(request.template`select * from tblFarm WHERE UserID = ${userid}`, (err, ress) => {
                 if (err) console.log(err)
-                this.farmsData = ress.recordset;
+                console.log(ress.recordset);
+                return ress.recordset;
+                // ress.recordset.forEach(farm=>{farmsData.push(farm)});
+                // console.log(farmsData);
             });
         })
-        console.log(farmsData);
     },
     getPlotData: (farmid) =>{
         sql.connect(config, (err)=>{

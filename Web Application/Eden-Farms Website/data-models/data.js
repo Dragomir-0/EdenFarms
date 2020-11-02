@@ -1,11 +1,11 @@
 const accessData = require('./DataAccessLayer');
 
 module.exports = {
-    user : {},
-    farmsData : [],
-    plotsData : [],
-    plantsData : [],
-    plantCategoriesData : [],
+    // user : {},
+    // farmsData : [],
+    // plotsData : [],
+    // plantsData : [],
+    // plantCategoriesData : [],
     CurrentUser: (loggedUser)=>{this.user = loggedUser; console.log(this.user.UserID)}, 
     GetFarms: async ()=>{await accessData.getFarmData(this.user.UserID).forEach(farm => {
         farmsData.push(farm);
