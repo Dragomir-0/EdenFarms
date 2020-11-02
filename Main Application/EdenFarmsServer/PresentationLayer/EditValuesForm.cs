@@ -47,10 +47,13 @@ namespace PresentationLayer
             decimal optpho = decimal.Parse(txtOptPho.Text);
             decimal optpot = decimal.Parse(txtOptPot.Text);
             pl.updatePlant(category, name, optambtem, optambhum, optamblig, optinttem, optinthum, optintlig, optintoxy, optnit, optpho, optpot, 0);
-            MessageBox.Show("Details have been updated", "Continue?", MessageBoxButtons.OK);
-            ScientificForm sf = new ScientificForm(userid, farmid, plotid);
-            sf.Show();
-            this.Hide();
+            DialogResult ds = MessageBox.Show("Successful", "Return to Scientific Form?", MessageBoxButtons.OK);
+            if (ds == DialogResult.OK)
+            {
+                ScientificForm sf = new ScientificForm(userid, farmid, plotid);
+                sf.Show();
+                this.Hide();
+            }
         }
 
         private void EditValuesForm_Load(object sender, EventArgs e)

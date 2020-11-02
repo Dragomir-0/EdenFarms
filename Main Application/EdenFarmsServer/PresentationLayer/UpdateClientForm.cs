@@ -45,6 +45,13 @@ namespace PresentationLayer
             if (password == confirm)
             {
                 us.updateUser(username, password, vatID, contact, email, address, theuserid);
+                DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
+                if (ds == DialogResult.OK)
+                {
+                    ClientForm cf = new ClientForm(userid, farmid, plotid);
+                    cf.Show();
+                    this.Hide();
+                }
             }
             else
             {

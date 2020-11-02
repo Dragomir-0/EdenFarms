@@ -36,9 +36,16 @@ namespace PresentationLayer
             Plot pl = new Plot();
             int farmid = int.Parse(txtFarmID.Text);
             int plantid = int.Parse(txtPlant.Text);
-            string user = "";
+            string user = txtUser.Text;
             string performance = txtPerformance.Text;
             pl.insertPlot(farmid, plantid, user, performance);
+            DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
+            if (ds == DialogResult.OK)
+            {
+                ClientForm cf = new ClientForm(userid, farmid, plotid);
+                cf.Show();
+                this.Hide();
+            }
         }
     }
 }

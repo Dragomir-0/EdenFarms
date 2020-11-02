@@ -31,7 +31,7 @@ namespace PresentationLayer
                 {
                     if (int.Parse(item["RoleID"].ToString()) == 0)
                     {
-
+                        
                     }
                     else if (int.Parse(item["RoleID"].ToString()) == 1)
                     {
@@ -70,9 +70,9 @@ namespace PresentationLayer
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            TechnicalForm tf = new TechnicalForm(0,0,0);
-            tf.Show();
-            this.Hide();
+            //TechnicalForm tf = new TechnicalForm(0,0,0);
+            //tf.Show();
+            //this.Hide();
         }
     }
 }

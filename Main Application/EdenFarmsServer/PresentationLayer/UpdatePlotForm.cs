@@ -40,6 +40,13 @@ namespace PresentationLayer
             string performance = txtPerformance.Text;
             int userid = 0;
             pl.updatePlot(farmid, plantid, user, performance, userid);
+            DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
+            if (ds == DialogResult.OK)
+            {
+                ClientForm cf = new ClientForm(userid, farmid, plotid);
+                cf.Show();
+                this.Hide();
+            }
         }
     }
 }

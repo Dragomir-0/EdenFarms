@@ -47,6 +47,13 @@ namespace PresentationLayer
             decimal optpho = decimal.Parse(txtOptPho.Text);
             decimal optpot = decimal.Parse(txtOptPot.Text);
             pl.insertPlant(category, name, optambtem, optambhum, optamblig, optinttem, optinthum, optintlig, optintoxy, optnit, optpho, optpot);
+            DialogResult ds = MessageBox.Show("Successful", "Return to Scientific Form?", MessageBoxButtons.OK);
+            if (ds == DialogResult.OK)
+            {
+                ScientificForm sf = new ScientificForm(userid, farmid, plotid);
+                sf.Show();
+                this.Hide();
+            }
         }
     }
 }
