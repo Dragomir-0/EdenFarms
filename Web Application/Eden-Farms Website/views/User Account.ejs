@@ -15,26 +15,26 @@ and open the template in the editor.
   <div class="background">
   <div class="navbar">
     <ul>
-      <li><a href="Home.html" class="scroll">Home.</a></li>
-      <li><a href="Plots page.html" class="scroll">Plots</a></li>
+      <li><a href="\home" class="scroll">Home.</a></li>
+      <li><a href="\plots" class="scroll">Plots</a></li>
     </ul>
   </div>
         <div class="container">
   <div class="header-container">
       <img src="../Media/userimage.jpg" alt="Backgroundimage" class="header-image" />
     <div class="header">
-      <h1 class="main-heading">Farmer name</h1>
-      <span class="tag">Total farms: 8</span>
-      <span class="tag">Total plots: 350</span>
+      <h1 class="main-heading"><%= user.UserName %></h1>
+      <span class="tag">Total farms: 1</span>
+      <span class="tag">Total plots: 1</span>
       <div class="stats">
         <span class="stat-module">
-           Temperature <span class="stat-number">26</span>
+           Temperature <span class="stat-number">Current Temperature</span>
         </span>
         <span class="stat-module">
-          Humidity <span class="stat-number">44</span>
+          Humidity <span class="stat-number">Current Humidity</span>
         </span>
         <span class="stat-module">
-          Nutrition <span class="stat-number">125</span>
+          Nutrition <span class="stat-number">Current Nutrtion</span>
         </span>
       </div>
     </div> <!-- END header -->
@@ -47,7 +47,7 @@ and open the template in the editor.
     <div class="u-clearfix"></div>
     <div class="body-info">
       <p>
-        Farm location: North west.
+        Farm location: dummy location.
       </p>
     </div>
     <div class="card u-clearfix">

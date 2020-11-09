@@ -29,7 +29,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/home', (req, res) => {
     if (req.session.loggedin) {
-        console.log(user.UserID);
         // farmsData = data.getFarmData(user.UserID);
         // res.render('home.ejs',{farms:farmsData, farmLength: farmsData.length, user: user});
         sql.connect(config, (err)=>{
@@ -41,7 +40,6 @@ app.get('/home', (req, res) => {
                 ress.recordset.forEach(farm=>{farmsData.push(farm)});
                 res.render('home.ejs',{farms:farmsData, farmLength: farmsData.length, user: user});
             });
-            console.log(farmsData)
         })
 	} else {
 		res.send('Please login to view this page!');
@@ -82,23 +80,24 @@ app.get('/admin', (req, res) => {
 });
 
 app.get('/plots', (req, res) => {
-    farm = req.body.selectedFarm;
-    console.log(farm.innerText);
+    //farm = req.body.selectedFarm;
+    //console.log(farm.innerText);
     sql.connect(config, (err)=>{
         if(err) console.log(err);
         var request = new sql.Request();
     
-        request.query(request.template`select * from tblPlots WHERE FarmID = ${farmid}`, (err, ress) => {
+        request.query(request.template`select * from tblPlots WHERE FarmID = 1`, (err, ress) => {
             if (err) console.log(err)
-            return ress.recordset;
+            ress.recordset.forEach(plot=>{plotsData.push(plot)});
+            res.render('Plots page.ejs',{plots:plotsData, plotsLength: plotsData.length, user: user});
         });
     })
-    res.render('plots page.ejs');
     //res.sendFile('static-files/Pages/plots_page.html', { root: __dirname })
 });
 
 app.get('/account', (req, res) => {
-    res.sendFile('static-files/Pages/user_account.html', { root: __dirname })
+    res.render('User account.ejs', {user:user});
+    //res.sendFile('static-files/Pages/user account.html', { root: __dirname })
 });
 
 app.get('/user', (req, res) => {
