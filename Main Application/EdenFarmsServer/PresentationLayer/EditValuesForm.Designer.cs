@@ -61,6 +61,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblPlantID = new System.Windows.Forms.Label();
+            this.txtPlantID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -321,7 +323,7 @@
             this.panel1.Controls.Add(this.txtOptAmbTemp);
             this.panel1.Controls.Add(this.txtOptAmbHum);
             this.panel1.Controls.Add(this.txtOptAmbLig);
-            this.panel1.Location = new System.Drawing.Point(24, 162);
+            this.panel1.Location = new System.Drawing.Point(24, 184);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(221, 137);
             this.panel1.TabIndex = 34;
@@ -339,7 +341,7 @@
             this.panel2.Controls.Add(this.txtOptIntLig);
             this.panel2.Controls.Add(this.txtOptIntTemp);
             this.panel2.Controls.Add(this.txtOptIntHum);
-            this.panel2.Location = new System.Drawing.Point(275, 162);
+            this.panel2.Location = new System.Drawing.Point(275, 184);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(232, 168);
             this.panel2.TabIndex = 35;
@@ -355,7 +357,7 @@
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.txtOptPho);
             this.panel3.Controls.Add(this.txtOptNit);
-            this.panel3.Location = new System.Drawing.Point(541, 162);
+            this.panel3.Location = new System.Drawing.Point(541, 184);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(227, 137);
             this.panel3.TabIndex = 36;
@@ -364,14 +366,33 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.lblPlantID);
+            this.panel4.Controls.Add(this.txtPlantID);
             this.panel4.Controls.Add(this.txtCategory);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.txtName);
             this.panel4.Location = new System.Drawing.Point(24, 35);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(400, 100);
+            this.panel4.Size = new System.Drawing.Size(400, 133);
             this.panel4.TabIndex = 37;
+            // 
+            // lblPlantID
+            // 
+            this.lblPlantID.AutoSize = true;
+            this.lblPlantID.Location = new System.Drawing.Point(9, 99);
+            this.lblPlantID.Name = "lblPlantID";
+            this.lblPlantID.Size = new System.Drawing.Size(45, 13);
+            this.lblPlantID.TabIndex = 25;
+            this.lblPlantID.Text = "Plant ID";
+            // 
+            // txtPlantID
+            // 
+            this.txtPlantID.Location = new System.Drawing.Point(100, 96);
+            this.txtPlantID.Name = "txtPlantID";
+            this.txtPlantID.Size = new System.Drawing.Size(281, 20);
+            this.txtPlantID.TabIndex = 26;
+            this.txtPlantID.TextChanged += new System.EventHandler(this.txtPlantID_TextChanged);
             // 
             // EditValuesForm
             // 
@@ -435,5 +456,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblPlantID;
+        private System.Windows.Forms.TextBox txtPlantID;
     }
 }

@@ -46,12 +46,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtRoleID = new System.Windows.Forms.TextBox();
+            this.lblrole = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(212, 271);
+            this.btnAdd.Location = new System.Drawing.Point(212, 283);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(163, 41);
             this.btnAdd.TabIndex = 3;
@@ -61,7 +63,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(12, 271);
+            this.btnCancel.Location = new System.Drawing.Point(12, 283);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(163, 41);
             this.btnCancel.TabIndex = 2;
@@ -73,6 +75,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtRoleID);
+            this.panel1.Controls.Add(this.lblrole);
             this.panel1.Controls.Add(this.btnViewPassword);
             this.panel1.Controls.Add(this.txtConfirmPassword);
             this.panel1.Controls.Add(this.lblConfirmPassword);
@@ -90,7 +94,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 244);
+            this.panel1.Size = new System.Drawing.Size(363, 260);
             this.panel1.TabIndex = 7;
             // 
             // btnViewPassword
@@ -139,7 +143,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(135, 206);
+            this.txtAddress.Location = new System.Drawing.Point(135, 227);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(200, 20);
             this.txtAddress.TabIndex = 13;
@@ -147,7 +151,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 209);
+            this.label5.Location = new System.Drawing.Point(3, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 12;
@@ -155,7 +159,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(135, 180);
+            this.txtEmail.Location = new System.Drawing.Point(135, 201);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 20);
             this.txtEmail.TabIndex = 11;
@@ -163,7 +167,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 183);
+            this.label4.Location = new System.Drawing.Point(3, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 10;
@@ -171,7 +175,7 @@
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(135, 154);
+            this.txtContactNumber.Location = new System.Drawing.Point(135, 175);
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(200, 20);
             this.txtContactNumber.TabIndex = 9;
@@ -179,7 +183,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 157);
+            this.label3.Location = new System.Drawing.Point(3, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 8;
@@ -187,7 +191,7 @@
             // 
             // txtIDNum
             // 
-            this.txtIDNum.Location = new System.Drawing.Point(135, 128);
+            this.txtIDNum.Location = new System.Drawing.Point(135, 149);
             this.txtIDNum.Name = "txtIDNum";
             this.txtIDNum.Size = new System.Drawing.Size(200, 20);
             this.txtIDNum.TabIndex = 7;
@@ -195,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 131);
+            this.label2.Location = new System.Drawing.Point(3, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 6;
@@ -217,12 +221,28 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             // 
+            // txtRoleID
+            // 
+            this.txtRoleID.Location = new System.Drawing.Point(135, 123);
+            this.txtRoleID.Name = "txtRoleID";
+            this.txtRoleID.Size = new System.Drawing.Size(200, 20);
+            this.txtRoleID.TabIndex = 22;
+            // 
+            // lblrole
+            // 
+            this.lblrole.AutoSize = true;
+            this.lblrole.Location = new System.Drawing.Point(3, 126);
+            this.lblrole.Name = "lblrole";
+            this.lblrole.Size = new System.Drawing.Size(43, 13);
+            this.lblrole.TabIndex = 21;
+            this.lblrole.Text = "Role ID";
+            // 
             // AddClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(386, 324);
+            this.ClientSize = new System.Drawing.Size(386, 335);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
@@ -254,5 +274,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtRoleID;
+        private System.Windows.Forms.Label lblrole;
     }
 }

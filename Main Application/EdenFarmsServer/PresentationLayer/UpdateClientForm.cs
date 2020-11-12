@@ -34,6 +34,7 @@ namespace PresentationLayer
         private void btnEdit_Click(object sender, EventArgs e)
         {
             User us = new User();
+            int roleid = int.Parse(txtRoleID.Text);
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string confirm = txtConfirmPassword.Text;
@@ -44,7 +45,7 @@ namespace PresentationLayer
             int theuserid = userid;
             if (password == confirm)
             {
-                us.updateUser(username, password, vatID, contact, email, address, theuserid);
+                us.updateUser(roleid, username, password, vatID, contact, email, address, theuserid);
                 DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
                 if (ds == DialogResult.OK)
                 {

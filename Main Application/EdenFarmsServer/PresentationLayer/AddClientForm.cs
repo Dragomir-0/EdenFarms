@@ -34,6 +34,7 @@ namespace PresentationLayer
         private void btnAdd_Click(object sender, EventArgs e)
         {
             User us = new User();
+            int roleid = int.Parse(txtRoleID.Text);
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string confirm = txtConfirmPassword.Text;
@@ -43,7 +44,7 @@ namespace PresentationLayer
             string address = txtAddress.Text;
             if (password == confirm)
             {
-                us.insertUser(username, password, vatID, contact, email, address);
+                us.insertUser(roleid, username, password, vatID, contact, email, address);
                 DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
                 if (ds == DialogResult.OK)
                 {

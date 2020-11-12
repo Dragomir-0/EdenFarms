@@ -186,6 +186,34 @@ namespace Data_Access_Layer
             }
             return output;
         }
+        public DataTable SelectSpecificPlant(int plantid)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            DataTable output = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("spListAllPlantDetails", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", plantid);
+                sda.SelectCommand = cmd;
+                sda.FillSchema(output, SchemaType.Source);
+                sda.Fill(output);
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return output;
+        }
 
         //INSERT METHODS
 
@@ -317,7 +345,7 @@ namespace Data_Access_Layer
                 }
             }
         }
-        public void spInserThetUsers(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
+        public void spInserThetUsers(int roleid, string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
             try
@@ -325,6 +353,7 @@ namespace Data_Access_Layer
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("spInsertUser", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RoleID", roleid);
                 cmd.Parameters.AddWithValue("@UserName", usernamePrm);
                 cmd.Parameters.AddWithValue("@UserPassword", passwordPrm);
                 cmd.Parameters.AddWithValue("@VatIDNumber", vatIDNumberPrm);

@@ -36,6 +36,7 @@ namespace PresentationLayer
             Plant pl = new Plant();
             string category = txtCategory.Text;
             string name = txtName.Text;
+            int plantid = int.Parse(txtPlantID.Text);
             decimal optambtem = decimal.Parse(txtOptAmbTemp.Text);
             decimal optambhum = decimal.Parse(txtOptAmbHum.Text);
             string optamblig = txtOptAmbLig.Text;
@@ -46,7 +47,7 @@ namespace PresentationLayer
             decimal optnit = decimal.Parse(txtOptNit.Text);
             decimal optpho = decimal.Parse(txtOptPho.Text);
             decimal optpot = decimal.Parse(txtOptPot.Text);
-            pl.updatePlant(category, name, optambtem, optambhum, optamblig, optinttem, optinthum, optintlig, optintoxy, optnit, optpho, optpot, 0);
+            pl.updatePlant(category, name, optambtem, optambhum, optamblig, optinttem, optinthum, optintlig, optintoxy, optnit, optpho, optpot, plantid);
             DialogResult ds = MessageBox.Show("Successful", "Return to Scientific Form?", MessageBoxButtons.OK);
             if (ds == DialogResult.OK)
             {
@@ -59,6 +60,41 @@ namespace PresentationLayer
         private void EditValuesForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPlantID_TextChanged(object sender, EventArgs e)
+        {
+            int plantid = 0;
+            try
+            {
+                plantid = int.Parse(txtPlantID.Text);
+            }
+            catch (FormatException)
+            { }
+            finally
+            {
+                Plant pl = new Plant();
+                DataTable data = new DataTable();
+                data = pl.SpecificPlant(plantid);
+                if (plantid != null || plantid != 0)
+                {
+                    foreach (DataRow item in data.Rows)
+                    {
+                        txtName.Text = item["PlantName"].ToString();
+                        txtCategory.Text = item["PlantCategoryID"].ToString();
+                        txtOptAmbTemp.Text = item["OptimalAmbientTemp"].ToString();
+                        txtOptAmbHum.Text = item["OptimalAmbientHumidity"].ToString();
+                        txtOptAmbLig.Text = item["OptimalAmbientLight"].ToString();
+                        txtOptIntTemp.Text = item["OptimalInternalTemp"].ToString();
+                        txtOptIntHum.Text = item["OptimalInternalHumidity"].ToString();
+                        txtOptIntLig.Text = item["OptimalInternalLight"].ToString();
+                        txtOptIntOxy.Text = item["OptimalInternalOxygen"].ToString();
+                        txtOptNit.Text = item["OptimalNitrogen"].ToString();
+                        txtOptPho.Text = item["OptimalPhosphorus"].ToString();
+                        txtOptPot.Text = item["OptimalPotassium"].ToString();
+                    }
+                }
+            }
         }
     }
 }

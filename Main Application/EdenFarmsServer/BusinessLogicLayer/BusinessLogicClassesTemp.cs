@@ -67,16 +67,16 @@ namespace BusinessLogicLayer
             dba.spDeleteUsers(id);
         }
 
-        public void updateUser(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm, int userid)
+        public void updateUser(int roleid, string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm, int userid)
         {
             DBAccess dba = new DBAccess();
-            dba.spUpdateUsers(usernamePrm, passwordPrm, vatIDNumberPrm, contactNumberPrm, emailaddressPrm, userAddressPrm, userid);
+            dba.spUpdateUsers(roleid, usernamePrm, passwordPrm, vatIDNumberPrm, contactNumberPrm, emailaddressPrm, userAddressPrm, userid);
         }
 
-        public void insertUser(string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
+        public void insertUser(int roleid, string usernamePrm, string passwordPrm, string vatIDNumberPrm, string contactNumberPrm, string emailaddressPrm, string userAddressPrm)
         {
             DBAccess dba = new DBAccess();
-            dba.spInserThetUsers(usernamePrm, passwordPrm, vatIDNumberPrm, contactNumberPrm, emailaddressPrm, userAddressPrm);
+            dba.spInserThetUsers(roleid, usernamePrm, passwordPrm, vatIDNumberPrm, contactNumberPrm, emailaddressPrm, userAddressPrm);
         }
 
         public bool LoginCheck(string user, string pass)
@@ -431,6 +431,14 @@ namespace BusinessLogicLayer
         {
             DBAccess dba = new DBAccess();
             dba.spInserPlantcategory(list);
+        }
+
+        public DataTable SpecificPlant(int plantid)
+        {
+            DBAccess dba = new DBAccess();
+            DataTable output = new DataTable();
+            output = dba.SelectSpecificPlant(plantid);
+            return output;
         }
         #endregion
 
