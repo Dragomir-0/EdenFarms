@@ -29,8 +29,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/home', (req, res) => {
     if (req.session.loggedin) {
-        // farmsData = data.getFarmData(user.UserID);
-        // res.render('home.ejs',{farms:farmsData, farmLength: farmsData.length, user: user});
         sql.connect(config, (err)=>{
             if(err) console.log(err);
             var request = new sql.Request();
@@ -57,8 +55,6 @@ app.post('/auth', (req, response) => {
 
         request.query(request.template`SELECT * FROM tblUser WHERE UserName = ${username} AND UserPassword = ${password}`, (err, ress) => {
             if (ress.recordset.length > 0) {
-                // data.CurrentUser(ress.recordset[0]);
-                // id = ress.recordset[0].UserID;
                 user = ress.recordset[0];
                 req.session.loggedin = true;
                 req.session.username = username;
