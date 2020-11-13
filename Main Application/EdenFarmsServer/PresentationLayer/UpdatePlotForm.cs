@@ -36,9 +36,9 @@ namespace PresentationLayer
             Plot pl = new Plot();
             int farmid = int.Parse(txtFarmID.Text);
             int plantid = int.Parse(txtPlant.Text);
-            string user = "";
+            string user = txtUserOverride.Text;
             string performance = txtPerformance.Text;
-            int userid = 0;
+            int userid = int.Parse(txtPlotID.Text);
             pl.updatePlot(farmid, plantid, user, performance, userid);
             DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
             if (ds == DialogResult.OK)
@@ -46,6 +46,33 @@ namespace PresentationLayer
                 ClientForm cf = new ClientForm(userid, farmid, plotid);
                 cf.Show();
                 this.Hide();
+            }
+        }
+
+        private void txtPlotID_TextChanged(object sender, EventArgs e)
+        {
+            int plotid = 0;
+            try
+            {
+                plotid = int.Parse(txtPlotID.Text);
+            }
+            catch (FormatException)
+            { }
+            finally
+            {
+                Plot pl = new Plot();
+                DataTable data = new DataTable();
+                data = pl.returnSpecific(plotid);
+                if (plotid != null || plotid != 0)
+                {
+                    foreach (DataRow item in data.Rows)
+                    {
+                        txtFarmID.Text = item["FarmID"].ToString();
+                        txtPlant.Text = item["PlantID"].ToString();
+                        txtUserOverride.Text = item["UserOverride"].ToString();
+                        txtPerformance.Text = item["PerformanceReview"].ToString();
+                    }
+                }
             }
         }
     }

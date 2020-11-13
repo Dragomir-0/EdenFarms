@@ -123,6 +123,13 @@ namespace BusinessLogicLayer
             return output;
         }
 
+        public DataTable returnSpecific(int id)
+        {
+            DBAccess dba = new DBAccess();
+            DataTable dt = new DataTable();
+            dt = dba.SelectSpecificClient(id);
+            return dt;
+        }
         #endregion
 
         #region Overrrides
@@ -287,6 +294,14 @@ namespace BusinessLogicLayer
         {
             DBAccess dba = new DBAccess();
             dba.spInsertPlots(farmIDPrm, plant, user, performance);
+        }
+
+        public DataTable returnSpecific(int id)
+        {
+            DBAccess dba = new DBAccess();
+            DataTable dt = new DataTable();
+            dt = dba.SelectSpecificPlot(id);
+            return dt;
         }
         #endregion
 

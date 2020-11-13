@@ -73,5 +73,35 @@ namespace PresentationLayer
                 txtConfirmPassword.PasswordChar = '*';
             }
         }
+
+        private void txtClientID_TextChanged(object sender, EventArgs e)
+        {
+            int userid = 0;
+            try
+            {
+                userid = int.Parse(txtClientID.Text);
+            }
+            catch (FormatException)
+            { }
+            finally
+            {
+                User us = new User();
+                DataTable data = new DataTable();
+                data = us.returnSpecific(userid);
+                if (userid != null || userid != 0)
+                {
+                    foreach (DataRow item in data.Rows)
+                    {
+                        txtRoleID.Text = item["RoleID"].ToString();
+                        txtUsername.Text = item["UserName"].ToString();
+                        txtPassword.Text = item["UserPassword"].ToString();
+                        txtIDNum.Text = item["VatIDNumber"].ToString();
+                        txtContactNumber.Text = item["ContactNumber"].ToString();
+                        txtEmail.Text = item["Email"].ToString();
+                        txtAddress.Text = item["UserAddress"].ToString();
+                    }
+                }
+            }
+        }
     }
 }

@@ -31,8 +31,10 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPlotID = new System.Windows.Forms.TextBox();
+            this.lblPlotID = new System.Windows.Forms.Label();
             this.txtPerformance = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUserOverride = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,7 +46,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(226, 144);
+            this.btnEdit.Location = new System.Drawing.Point(226, 171);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(163, 41);
             this.btnEdit.TabIndex = 5;
@@ -54,7 +56,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(12, 144);
+            this.btnCancel.Location = new System.Drawing.Point(12, 171);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(163, 41);
             this.btnCancel.TabIndex = 4;
@@ -66,8 +68,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtPlotID);
+            this.panel1.Controls.Add(this.lblPlotID);
             this.panel1.Controls.Add(this.txtPerformance);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtUserOverride);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -76,27 +80,44 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 126);
+            this.panel1.Size = new System.Drawing.Size(377, 153);
             this.panel1.TabIndex = 6;
+            // 
+            // txtPlotID
+            // 
+            this.txtPlotID.Location = new System.Drawing.Point(142, 11);
+            this.txtPlotID.Name = "txtPlotID";
+            this.txtPlotID.Size = new System.Drawing.Size(210, 20);
+            this.txtPlotID.TabIndex = 9;
+            this.txtPlotID.TextChanged += new System.EventHandler(this.txtPlotID_TextChanged);
+            // 
+            // lblPlotID
+            // 
+            this.lblPlotID.AutoSize = true;
+            this.lblPlotID.Location = new System.Drawing.Point(3, 14);
+            this.lblPlotID.Name = "lblPlotID";
+            this.lblPlotID.Size = new System.Drawing.Size(39, 13);
+            this.lblPlotID.TabIndex = 8;
+            this.lblPlotID.Text = "Plot ID";
             // 
             // txtPerformance
             // 
-            this.txtPerformance.Location = new System.Drawing.Point(142, 90);
+            this.txtPerformance.Location = new System.Drawing.Point(142, 117);
             this.txtPerformance.Name = "txtPerformance";
             this.txtPerformance.Size = new System.Drawing.Size(210, 20);
             this.txtPerformance.TabIndex = 7;
             // 
-            // textBox1
+            // txtUserOverride
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtUserOverride.Location = new System.Drawing.Point(142, 91);
+            this.txtUserOverride.Name = "txtUserOverride";
+            this.txtUserOverride.Size = new System.Drawing.Size(210, 20);
+            this.txtUserOverride.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 93);
+            this.label4.Location = new System.Drawing.Point(3, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 5;
@@ -105,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 67);
+            this.label3.Location = new System.Drawing.Point(3, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 4;
@@ -114,22 +135,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 41);
+            this.label2.Location = new System.Drawing.Point(3, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Plant";
+            this.label2.Text = "Plant ID";
             // 
             // txtPlant
             // 
-            this.txtPlant.Location = new System.Drawing.Point(142, 38);
+            this.txtPlant.Location = new System.Drawing.Point(142, 65);
             this.txtPlant.Name = "txtPlant";
             this.txtPlant.Size = new System.Drawing.Size(210, 20);
             this.txtPlant.TabIndex = 2;
             // 
             // txtFarmID
             // 
-            this.txtFarmID.Location = new System.Drawing.Point(142, 12);
+            this.txtFarmID.Location = new System.Drawing.Point(142, 39);
             this.txtFarmID.Name = "txtFarmID";
             this.txtFarmID.Size = new System.Drawing.Size(210, 20);
             this.txtFarmID.TabIndex = 1;
@@ -137,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Location = new System.Drawing.Point(3, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
@@ -148,7 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(403, 202);
+            this.ClientSize = new System.Drawing.Size(403, 225);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
@@ -170,8 +191,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPlant;
         private System.Windows.Forms.TextBox txtPerformance;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserOverride;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPlotID;
+        private System.Windows.Forms.Label lblPlotID;
     }
 }

@@ -214,6 +214,62 @@ namespace Data_Access_Layer
             }
             return output;
         }
+        public DataTable SelectSpecificPlot(int plotid)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            DataTable output = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("spListPlotDetails", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", plotid);
+                sda.SelectCommand = cmd;
+                sda.FillSchema(output, SchemaType.Source);
+                sda.Fill(output);
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return output;
+        }
+        public DataTable SelectSpecificClient(int userid)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            DataTable output = new DataTable();
+            SqlDataAdapter sda = new SqlDataAdapter();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("spListUserIDDetails", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", userid);
+                sda.SelectCommand = cmd;
+                sda.FillSchema(output, SchemaType.Source);
+                sda.Fill(output);
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return output;
+        }
 
         //INSERT METHODS
 

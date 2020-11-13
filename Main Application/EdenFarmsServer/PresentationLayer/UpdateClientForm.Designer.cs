@@ -31,6 +31,8 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtRoleID = new System.Windows.Forms.TextBox();
+            this.lblrole = new System.Windows.Forms.Label();
             this.btnViewPassword = new System.Windows.Forms.Button();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.lblConfirmPassword = new System.Windows.Forms.Label();
@@ -46,14 +48,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtRoleID = new System.Windows.Forms.TextBox();
-            this.lblrole = new System.Windows.Forms.Label();
+            this.txtClientID = new System.Windows.Forms.TextBox();
+            this.lblClientID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(211, 276);
+            this.btnEdit.Location = new System.Drawing.Point(211, 312);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(163, 41);
             this.btnEdit.TabIndex = 5;
@@ -63,7 +65,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(12, 276);
+            this.btnCancel.Location = new System.Drawing.Point(12, 312);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(163, 41);
             this.btnCancel.TabIndex = 4;
@@ -75,6 +77,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtClientID);
+            this.panel1.Controls.Add(this.lblClientID);
             this.panel1.Controls.Add(this.txtRoleID);
             this.panel1.Controls.Add(this.lblrole);
             this.panel1.Controls.Add(this.btnViewPassword);
@@ -94,12 +98,28 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 258);
+            this.panel1.Size = new System.Drawing.Size(363, 294);
             this.panel1.TabIndex = 6;
+            // 
+            // txtRoleID
+            // 
+            this.txtRoleID.Location = new System.Drawing.Point(135, 152);
+            this.txtRoleID.Name = "txtRoleID";
+            this.txtRoleID.Size = new System.Drawing.Size(200, 20);
+            this.txtRoleID.TabIndex = 20;
+            // 
+            // lblrole
+            // 
+            this.lblrole.AutoSize = true;
+            this.lblrole.Location = new System.Drawing.Point(3, 155);
+            this.lblrole.Name = "lblrole";
+            this.lblrole.Size = new System.Drawing.Size(43, 13);
+            this.lblrole.TabIndex = 19;
+            this.lblrole.Text = "Role ID";
             // 
             // btnViewPassword
             // 
-            this.btnViewPassword.Location = new System.Drawing.Point(135, 84);
+            this.btnViewPassword.Location = new System.Drawing.Point(135, 118);
             this.btnViewPassword.Name = "btnViewPassword";
             this.btnViewPassword.Size = new System.Drawing.Size(101, 23);
             this.btnViewPassword.TabIndex = 18;
@@ -109,7 +129,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(135, 58);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(135, 92);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(200, 20);
@@ -118,7 +138,7 @@
             // lblConfirmPassword
             // 
             this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(3, 61);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(3, 95);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(91, 13);
             this.lblConfirmPassword.TabIndex = 16;
@@ -126,7 +146,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(135, 32);
+            this.txtPassword.Location = new System.Drawing.Point(135, 66);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(200, 20);
@@ -135,7 +155,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(3, 35);
+            this.lblPassword.Location = new System.Drawing.Point(3, 69);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 14;
@@ -143,7 +163,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(135, 223);
+            this.txtAddress.Location = new System.Drawing.Point(135, 257);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(200, 20);
             this.txtAddress.TabIndex = 13;
@@ -151,7 +171,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 226);
+            this.label5.Location = new System.Drawing.Point(3, 260);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 12;
@@ -159,7 +179,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(135, 197);
+            this.txtEmail.Location = new System.Drawing.Point(135, 231);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 20);
             this.txtEmail.TabIndex = 11;
@@ -167,7 +187,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 200);
+            this.label4.Location = new System.Drawing.Point(3, 234);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 10;
@@ -175,7 +195,7 @@
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(135, 171);
+            this.txtContactNumber.Location = new System.Drawing.Point(135, 205);
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(200, 20);
             this.txtContactNumber.TabIndex = 9;
@@ -183,7 +203,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 174);
+            this.label3.Location = new System.Drawing.Point(3, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 8;
@@ -191,7 +211,7 @@
             // 
             // txtIDNum
             // 
-            this.txtIDNum.Location = new System.Drawing.Point(135, 145);
+            this.txtIDNum.Location = new System.Drawing.Point(135, 179);
             this.txtIDNum.Name = "txtIDNum";
             this.txtIDNum.Size = new System.Drawing.Size(200, 20);
             this.txtIDNum.TabIndex = 7;
@@ -199,7 +219,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 148);
+            this.label2.Location = new System.Drawing.Point(3, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 6;
@@ -207,7 +227,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(135, 6);
+            this.txtUsername.Location = new System.Drawing.Point(135, 40);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(200, 20);
             this.txtUsername.TabIndex = 5;
@@ -215,34 +235,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             // 
-            // txtRoleID
+            // txtClientID
             // 
-            this.txtRoleID.Location = new System.Drawing.Point(135, 118);
-            this.txtRoleID.Name = "txtRoleID";
-            this.txtRoleID.Size = new System.Drawing.Size(200, 20);
-            this.txtRoleID.TabIndex = 20;
+            this.txtClientID.Location = new System.Drawing.Point(135, 11);
+            this.txtClientID.Name = "txtClientID";
+            this.txtClientID.Size = new System.Drawing.Size(200, 20);
+            this.txtClientID.TabIndex = 22;
+            this.txtClientID.TextChanged += new System.EventHandler(this.txtClientID_TextChanged);
             // 
-            // lblrole
+            // lblClientID
             // 
-            this.lblrole.AutoSize = true;
-            this.lblrole.Location = new System.Drawing.Point(3, 121);
-            this.lblrole.Name = "lblrole";
-            this.lblrole.Size = new System.Drawing.Size(43, 13);
-            this.lblrole.TabIndex = 19;
-            this.lblrole.Text = "Role ID";
+            this.lblClientID.AutoSize = true;
+            this.lblClientID.Location = new System.Drawing.Point(3, 14);
+            this.lblClientID.Name = "lblClientID";
+            this.lblClientID.Size = new System.Drawing.Size(47, 13);
+            this.lblClientID.TabIndex = 21;
+            this.lblClientID.Text = "Client ID";
             // 
             // UpdateClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(386, 328);
+            this.ClientSize = new System.Drawing.Size(386, 365);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
@@ -276,5 +297,7 @@
         private System.Windows.Forms.Button btnViewPassword;
         private System.Windows.Forms.TextBox txtRoleID;
         private System.Windows.Forms.Label lblrole;
+        private System.Windows.Forms.TextBox txtClientID;
+        private System.Windows.Forms.Label lblClientID;
     }
 }
