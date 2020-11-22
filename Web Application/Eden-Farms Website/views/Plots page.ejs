@@ -21,21 +21,22 @@ and open the template in the editor.
         
         <div class="navbar">
     <ul>
-        <li><a href="\home" class="scroll">Home.</a></li>
-        <li><a href="\account" class="scroll">User account.</a></li>
+        <li><a href="\home" class="scroll">Home</a></li>
+        <li><a href="\account" class="scroll">User account</a></li>
     </ul>
   </div>
-        <h1>Plots.</h1>
+        <h1>Plots</h1>
         <p>Here all of your plots will be displayed!</p>
-        <h1>Filter plots.</h1>
-        <<form>
-             <p class="name">
-                 <input name="filt" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Filter" id="filter" />
+        <h1>Filter plots</h1>
+        <form>
+              <p class="name">
+              <input name="filt" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Filter" id="filter" />
             </p>
         </form>
 
 <div class="container">
   <ul class="gallery">
+    <% plots.forEach((plot))=> { %>
     <li>
         <div class="flip" title="A Plot ">
         <div class="front-side"></div>
@@ -44,158 +45,18 @@ and open the template in the editor.
             <div class="content">
               <div class="loader"></div>
               <div class="text">
-                <h3>Plot 1</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
+                <h3>Plot <% plots.length + 1 %></h3>
+                <p>Temperature: <% plot.OptimalAmbientTemp %></p>
+                <p>Humidity: <% plot.OptimalAmbientHumidity %></p>
+                <p>Nutrition: <% plot.OptimalNitrogen %></p>
                 <p>Plant total: 4500</p>
-                
               </div>
             </div>
           </a>
         </div>
       </div>
     </li>
-     <li>
-      <div class="flip" title="B Plot ">
-        <div class="front-side"></div>
-        <div class="back-side">
-          <a href="#">
-            <div class="content">
-              <div class="loader"></div>
-              <div class="text">
-                <h3>Plot 2</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
-                <p>Plant total: 4500</p>
-                
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </li>
-     <li>
-      <div class="flip" title="C Plot ">
-        <div class="front-side"></div>
-        <div class="back-side">
-          <a href="#">
-            <div class="content">
-              <div class="loader"></div>
-              <div class="text">
-                <h3>Plot 3</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
-                <p>Plant total: 4500</p>
-                
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </li>
-     <li>
-      <div class="flip" title="D Plot ">
-        <div class="front-side"></div>
-        <div class="back-side">
-          <a href="#">
-            <div class="content">
-              <div class="loader"></div>
-              <div class="text">
-                <h3>Plot 4</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
-                <p>Plant total: 4500</p>
-                
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </li>
-     <li>
-      <div class="flip" title="E Plot ">
-        <div class="front-side"></div>
-        <div class="back-side">
-          <a href="#">
-            <div class="content">
-              <div class="loader"></div>
-              <div class="text">
-                <h3>Plot 5</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
-                <p>Plant total: 4500</p>
-                
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </li>
-     <li>
-      <div class="flip" title="F Plot ">
-        <div class="front-side"></div>
-        <div class="back-side">
-          <a href="#">
-            <div class="content">
-              <div class="loader"></div>
-              <div class="text">
-                <h3>Plot 6</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
-                <p>Plant total: 4500</p>
-                
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </li>
-     <li>
-      <div class="flip" title="G Plot ">
-        <div class="front-side"></div>
-        <div class="back-side">
-          <a href="#">
-            <div class="content">
-              <div class="loader"></div>
-              <div class="text">
-                <h3>Plot 7</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
-                <p>Plant total: 4500</p>
-                
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </li>
-     <li>
-      <div class="flip" title="H Plot ">
-        <div class="front-side"></div>
-        <div class="back-side">
-          <a href="#">
-            <div class="content">
-              <div class="loader"></div>
-              <div class="text">
-                <h3>Plot 8</h3>
-                <p>Temperature: 32C</p>
-                <p>Humidity 25</p>
-                <p>Nutrition: 320</p>
-                <p>Plant total: 4500</p>
-                
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </li>
+    <% }) %>
 </div>
     </body>
 </html>
