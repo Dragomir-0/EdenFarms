@@ -29,15 +29,15 @@ namespace PresentationLayer
                 details = user.returnDetails(username, password);
                 foreach (DataRow item in details.Rows)
                 {
-                    if (int.Parse(item["RoleID"].ToString()) == 0)
+                    if (int.Parse(item["RoleID"].ToString()) == 1)
                     {
                         
                     }
-                    else if (int.Parse(item["RoleID"].ToString()) == 1)
+                    else if (int.Parse(item["RoleID"].ToString()) == 2)
                     {
 
                     }
-                    else if (int.Parse(item["RoleID"].ToString()) == 2)
+                    else if (int.Parse(item["RoleID"].ToString()) == 3)
                     {
 
                     }
