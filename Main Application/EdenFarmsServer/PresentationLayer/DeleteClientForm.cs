@@ -63,15 +63,22 @@ namespace PresentationLayer
         {
             User us = new User();
             int clientid = int.Parse(txtClientID.Text);
-            DialogResult dr = MessageBox.Show("Are you sure?", "There is no going back", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
+            if (userid == clientid)
             {
-                us.deleteUser(clientid);
-                ClientForm cf = new ClientForm(userid, farmid, plotid);
-                cf.Show();
-                this.Hide();
+                DialogResult dr = MessageBox.Show("Are you sure?", "There is no going back", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    us.deleteUser(clientid);
+                    ClientForm cf = new ClientForm(userid, farmid, plotid);
+                    cf.Show();
+                    this.Hide();
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("You cannot delete someone else");
+            }
+
         }
 
         private void btnViewPassword_Click(object sender, EventArgs e)
