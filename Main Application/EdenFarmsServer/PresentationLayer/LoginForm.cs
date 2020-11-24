@@ -22,36 +22,48 @@ namespace PresentationLayer
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            User user = new User();
+            User us = new User();
             DataTable details = new DataTable();
-            if (user.LoginCheck(username, password))
+            bool allowed = false;
+            details = us.returnDetails();
+            foreach (DataRow item in details.Rows)
             {
-                details = user.returnDetails(username, password);
-                foreach (DataRow item in details.Rows)
+                if (item["UserName"].ToString() == username)
                 {
-                    if (int.Parse(item["RoleID"].ToString()) == 1)
+                    if (item["UserPassword"].ToString() == password)
                     {
-                        
-                    }
-                    else if (int.Parse(item["RoleID"].ToString()) == 2)
-                    {
-
-                    }
-                    else if (int.Parse(item["RoleID"].ToString()) == 3)
-                    {
-
+                        allowed = true;
+                        if (allowed)
+                        {
+                            if (int.Parse(item["RoleID"].ToString()) == 1)
+                            {
+                                ScientificForm sf = new ScientificForm(int.Parse(item["UserID"].ToString()), 0, 0);
+                                sf.Show();
+                                this.Hide();
+                            }
+                            else if (int.Parse(item["RoleID"].ToString()) == 2)
+                            {
+                                ClientForm cf = new ClientForm(int.Parse(item["UserID"].ToString()), 0, 0);
+                                cf.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid role. Contact support");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login credentials are incorrect");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Invalid role. Contact support");
+                        allowed = false;
                     }
                 }
+                    
             }
-            else
-            {
-                MessageBox.Show("Login credentials are incorrect");
-            }
-
         }
 
         private void btnScientific_Click(object sender, EventArgs e)

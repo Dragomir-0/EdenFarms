@@ -105,22 +105,11 @@ namespace BusinessLogicLayer
             return allGood;
         }
 
-        public DataTable returnDetails(string user, string pass)
+        public DataTable returnDetails()
         {
             DBAccess dba = new DBAccess();
             DataTable data = dba.getLoginDetails();
-            DataTable output = new DataTable();
-            foreach (DataRow item in data.Rows)
-            {
-                if (item["UserName"].ToString() == user)
-                {
-                    if (item["UserPassword"].ToString() == pass)
-                    {
-                        output.ImportRow(item);
-                    }
-                }
-            }
-            return output;
+            return data;
         }
 
         public DataTable returnSpecific(int id)
