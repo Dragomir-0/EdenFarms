@@ -86,5 +86,17 @@ namespace PresentationLayer
             //tf.Show();
             //this.Hide();
         }
+
+        private void btnViewPassword_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = default(char);
+            }
+            else if (txtPassword.PasswordChar == default(char))
+            {
+                txtPassword.PasswordChar = '*';
+            }
+        }
     }
 }
