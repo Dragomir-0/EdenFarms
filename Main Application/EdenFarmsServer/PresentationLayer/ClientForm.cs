@@ -76,5 +76,19 @@ namespace PresentationLayer
         {
 
         }
+
+        private void btnDeleteClient_Click_1(object sender, EventArgs e)
+        {
+            DeleteClientForm dcf = new DeleteClientForm(userid, farmid, plotid);
+            dcf.Show();
+            this.Hide();
+        }
+
+        private void btnDeletePlot_Click_1(object sender, EventArgs e)
+        {
+            DeletePlotForm dpf = new DeletePlotForm(userid, farmid, plotid);
+            dpf.Show();
+            this.Hide();
+        }
     }
 }

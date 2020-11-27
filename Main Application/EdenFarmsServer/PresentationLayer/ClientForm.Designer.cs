@@ -37,6 +37,8 @@
             this.btnEditClient = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEditPlot = new System.Windows.Forms.Button();
+            this.btnDeleteClient = new System.Windows.Forms.Button();
+            this.btnDeletePlot = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +97,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnDeleteClient);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnEditClient);
             this.panel1.Controls.Add(this.btnAddClient);
@@ -117,6 +120,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnDeletePlot);
             this.panel2.Controls.Add(this.btnEditPlot);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnAddPlot);
@@ -134,6 +138,26 @@
             this.btnEditPlot.Text = "Update";
             this.btnEditPlot.UseVisualStyleBackColor = true;
             this.btnEditPlot.Click += new System.EventHandler(this.btnEditPlot_Click);
+            // 
+            // btnDeleteClient
+            // 
+            this.btnDeleteClient.Location = new System.Drawing.Point(570, 22);
+            this.btnDeleteClient.Name = "btnDeleteClient";
+            this.btnDeleteClient.Size = new System.Drawing.Size(90, 56);
+            this.btnDeleteClient.TabIndex = 7;
+            this.btnDeleteClient.Text = "Delete";
+            this.btnDeleteClient.UseVisualStyleBackColor = true;
+            this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click_1);
+            // 
+            // btnDeletePlot
+            // 
+            this.btnDeletePlot.Location = new System.Drawing.Point(570, 20);
+            this.btnDeletePlot.Name = "btnDeletePlot";
+            this.btnDeletePlot.Size = new System.Drawing.Size(90, 56);
+            this.btnDeletePlot.TabIndex = 8;
+            this.btnDeletePlot.Text = "Delete";
+            this.btnDeletePlot.UseVisualStyleBackColor = true;
+            this.btnDeletePlot.Click += new System.EventHandler(this.btnDeletePlot_Click_1);
             // 
             // ClientForm
             // 
@@ -166,5 +190,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnEditPlot;
         private System.Windows.Forms.Button btnEditClient;
+        private System.Windows.Forms.Button btnDeleteClient;
+        private System.Windows.Forms.Button btnDeletePlot;
     }
 }

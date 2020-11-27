@@ -35,6 +35,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnScientific = new System.Windows.Forms.Button();
             this.btnClient = new System.Windows.Forms.Button();
+            this.btnViewPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(345, 247);
+            this.btnLogin.Location = new System.Drawing.Point(345, 290);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(126, 45);
             this.btnLogin.TabIndex = 2;
@@ -100,11 +101,22 @@
             this.btnClient.UseVisualStyleBackColor = true;
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
+            // btnViewPassword
+            // 
+            this.btnViewPassword.Location = new System.Drawing.Point(345, 226);
+            this.btnViewPassword.Name = "btnViewPassword";
+            this.btnViewPassword.Size = new System.Drawing.Size(101, 23);
+            this.btnViewPassword.TabIndex = 19;
+            this.btnViewPassword.Text = "View Password";
+            this.btnViewPassword.UseVisualStyleBackColor = true;
+            this.btnViewPassword.Click += new System.EventHandler(this.btnViewPassword_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnViewPassword);
             this.Controls.Add(this.btnClient);
             this.Controls.Add(this.btnScientific);
             this.Controls.Add(this.txtPassword);
@@ -128,6 +140,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnScientific;
         private System.Windows.Forms.Button btnClient;
+        private System.Windows.Forms.Button btnViewPassword;
     }
 }
 

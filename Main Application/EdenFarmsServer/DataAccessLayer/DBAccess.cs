@@ -743,7 +743,7 @@ namespace Data_Access_Layer
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT tblUser.UserID, tblUser.RoleID, tblUser.UserName, tblUser.UserPassword, tblUser.VatIDNumber, tblUser.ContactNumber, tblUser.Email, tblUser.UserAddress, tblFarm.FarmID, tblPlots.PlotID FROM tblUser, tblFarm, tblPlots WHERE (tblUser.UserID = tblFarm.UserID AND tblFarm.FarmID = tblPlots.FarmID)", conn);
+                SqlCommand cmd = new SqlCommand("SELECT UserID, RoleID, UserName, UserPassword FROM tblUser", conn);
                 sda.SelectCommand = cmd;
                 sda.FillSchema(output, SchemaType.Source);
                 sda.Fill(output);

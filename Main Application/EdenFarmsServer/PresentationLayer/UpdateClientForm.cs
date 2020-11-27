@@ -45,14 +45,23 @@ namespace PresentationLayer
             int theuserid = userid;
             if (password == confirm)
             {
-                us.updateUser(roleid, username, password, vatID, contact, email, address, theuserid);
-                DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
-                if (ds == DialogResult.OK)
+                if (theuserid == int.Parse(txtClientID.Text))
                 {
-                    ClientForm cf = new ClientForm(userid, farmid, plotid);
-                    cf.Show();
-                    this.Hide();
+                    us.updateUser(roleid, username, password, vatID, contact, email, address, theuserid);
+                    DialogResult ds = MessageBox.Show("Successful", "Return to Client Form?", MessageBoxButtons.OK);
+                    if (ds == DialogResult.OK)
+                    {
+                        ClientForm cf = new ClientForm(userid, farmid, plotid);
+                        cf.Show();
+                        this.Hide();
+
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("You cannot update someone else");
+                }
+                
             }
             else
             {
