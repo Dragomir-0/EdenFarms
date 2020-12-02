@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
-const port = process.env.port || 8383;
+const port = process.env.port || 3000;
 const bodyParser = require('body-parser');
 const sql = require("mssql");
 //const data = require('./data-models/DataAccessLayer');
@@ -36,7 +36,7 @@ app.get('/home', (req, res) => {
             request.query(request.template`select * from tblFarm WHERE UserID = ${user.UserID}`, (err, ress) => {
                 if (err) console.log(err)
                 ress.recordset.forEach(farm=>{farmsData.push(farm)});
-                res.render('home.ejs',{farms:farmsData, farmLength: farmsData.length, user: user});
+                res.render('home.ejs',{farm:farmsData[0], farmLength: farmsData.length, user: user});
             });
         })
 	} else {
@@ -67,6 +67,11 @@ app.post('/auth', (req, response) => {
     });
 });
 
+app.post('/logout',(req,res)=>{
+    res.redirect('/login');
+    req.session.loggedin = false;
+})
+
 app.get('/login', (req, res) => {
     res.sendFile('static-files/Pages/login.html', { root: __dirname })
 });
@@ -76,8 +81,6 @@ app.get('/admin', (req, res) => {
 });
 
 app.get('/plots', (req, res) => {
-    //farm = req.body.selectedFarm;
-    //console.log(farm.innerText);
     sql.connect(config, (err)=>{
         if(err) console.log(err);
         var request = new sql.Request();
@@ -88,12 +91,10 @@ app.get('/plots', (req, res) => {
             res.render('Plots page.ejs',{plots:plotsData, plotsLength: plotsData.length, user: user});
         });
     })
-    //res.sendFile('static-files/Pages/plots_page.html', { root: __dirname })
 });
 
 app.get('/account', (req, res) => {
     res.render('User account.ejs', {user:user});
-    //res.sendFile('static-files/Pages/user account.html', { root: __dirname })
 });
 
 app.get('/user', (req, res) => {
