@@ -7,7 +7,6 @@ const sql = require("mssql");
 //const data = require('./data-models/DataAccessLayer');
 
 user = {};
-farmsData= [];
 plotsData = [];
 plantsData = [];
 plantCategoriesData = [];
@@ -28,6 +27,7 @@ app.use(express.static('static-files'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/home', (req, res) => {
+    farmsData= [];
     if (req.session.loggedin) {
         sql.connect(config, (err)=>{
             if(err) console.log(err);
@@ -36,13 +36,13 @@ app.get('/home', (req, res) => {
             request.query(request.template`select * from tblFarm WHERE UserID = ${user.UserID}`, (err, ress) => {
                 if (err) console.log(err)
                 ress.recordset.forEach(farm=>{farmsData.push(farm)});
-                res.render('home.ejs',{farm:farmsData[0], farmLength: farmsData.length, user: user});
+                res.render('home.ejs',{farms:farmsData, farmLength: farmsData.length, user: user});
             });
         })
 	} else {
 		res.send('Please login to view this page!');
 	}
-	//res.end();
+	
 });
 
 app.post('/auth', (req, response) => {

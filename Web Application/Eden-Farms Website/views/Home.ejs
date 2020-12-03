@@ -18,7 +18,7 @@ and open the template in the editor.
   <div class="navbar">
     <ul>
       <li><a href="#Farms" class="scroll">Farms</a></li>
-      <li><a href="#Plots" class="scroll">Today's weather</a></li>
+      <li><a href="#weather" class="scroll">Today's weather</a></li>
       <li><a href="#cu" class="scroll">Contact us</a></li>
       <li><a href="\Plots">Plots</a></li>
       <li><a href="\account" class="scroll">User account</a></li>
@@ -30,15 +30,17 @@ and open the template in the editor.
         <h1 class="text-size">Eden Farms</h1>
 
         <p>Welcome come to your very own control center! Where you will be able to monitor and edit the specific items to ensure the plants on your plots is growing to their fullest potential. Eden farms gives you the opportunity to edit the temperature and many more functions, so that you can make sure your plant species can grow fast and healthy to the specifications you have set for them. Eden farms has a in built system which already have a set of specific parameters for the plants which the you can view and leave it as it is or enter your own parameters. </p>
+        <% farms.forEach((farm,i)=>{ %>  
           <figure class="snip1515" style="float: left">
-            <div class="profile-image"><img src=/Media/f0.jpg alt="Farm 1" /></div>
-                <figcaption>
-                    <a href="\Plots"><h3 name="selectedFarm"><%= farm.FarmName %></h3></a>
-                    <h4>Owner: <%= user.UserName %></h4>
-                    <h4>Location: <%= farm.FarmLocation %></h4>
-                    <h4>Location Alias: <%= farm.LocationAlias %></h4>
-                </figcaption>
-          </figure>
+              <div class="profile-image"><img src=/Media/f0.jpg alt="Farm 1" /></div>
+                  <figcaption>
+                      <a href="\Plots"><h3 name="selectedFarm"><%= farm.FarmName %></h3></a>
+                      <h4>Owner: <%= user.UserName %></h4>
+                      <h4>Location: <%= farm.FarmLocation %></h4>
+                      <h4>Location Alias: <%= farm.LocationAlias %></h4>
+                  </figcaption>
+            </figure>
+          <% }) %>
       </div>
   </div>
 </div>
@@ -87,7 +89,7 @@ and open the template in the editor.
   </div>
   </div>
 <div class="website-section" id="cu">
-  <h1 class="font-size">Contact us.</h1>
+  <h1 class="font-size">Contact us</h1>
   <div id="form-main">
   <div id="form-div">
     <form class="form" id="form1">

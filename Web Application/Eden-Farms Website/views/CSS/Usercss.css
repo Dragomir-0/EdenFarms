@@ -436,3 +436,7 @@ html {
 	}
 }
 
+#logout{
+  margin-right: 80%;
+  align-self: flex-start;
+}
